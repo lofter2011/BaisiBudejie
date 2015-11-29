@@ -14,9 +14,17 @@
 		6FF2BADD1C0B206C00C25931 /* XYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BADC1C0B206C00C25931 /* XYTabBarController.m */; };
 		6FF2BAE01C0B218400C25931 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BADF1C0B218400C25931 /* UIImage+Image.m */; };
 		6FF2BAE31C0B226A00C25931 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BAE21C0B226A00C25931 /* UIColor+RandomColor.m */; };
+		6FF2BAE81C0B322B00C25931 /* XYAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BAE71C0B322B00C25931 /* XYAdViewController.m */; };
+		6FF2BAEA1C0B32A700C25931 /* XYAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2BAE91C0B32A700C25931 /* XYAdViewController.xib */; };
+		6FF2BAF11C0B33F800C25931 /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2BAEC1C0B33F800C25931 /* LaunchImage-568h@2x.png */; };
+		6FF2BAF21C0B33F800C25931 /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2BAED1C0B33F800C25931 /* LaunchImage-800-667h@2x.png */; };
+		6FF2BAF31C0B33F800C25931 /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2BAEE1C0B33F800C25931 /* LaunchImage-800-Portrait-736h@3x.png */; };
+		6FF2BAF41C0B33F800C25931 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2BAEF1C0B33F800C25931 /* LaunchImage.png */; };
+		6FF2BAF51C0B33F800C25931 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2BAF01C0B33F800C25931 /* LaunchImage@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F13EA7C1C0B403A00810E0F /* BaisiBudejie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaisiBudejie.pch; sourceTree = "<group>"; };
 		6F8FB9ED1C0B1DC500812CFC /* BaisiBudejie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaisiBudejie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8FB9F11C0B1DC500812CFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F8FB9F31C0B1DC500812CFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -30,6 +38,14 @@
 		6FF2BADF1C0B218400C25931 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		6FF2BAE11C0B226A00C25931 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 		6FF2BAE21C0B226A00C25931 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		6FF2BAE61C0B322B00C25931 /* XYAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAdViewController.h; sourceTree = "<group>"; };
+		6FF2BAE71C0B322B00C25931 /* XYAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAdViewController.m; sourceTree = "<group>"; };
+		6FF2BAE91C0B32A700C25931 /* XYAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYAdViewController.xib; sourceTree = "<group>"; };
+		6FF2BAEC1C0B33F800C25931 /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
+		6FF2BAED1C0B33F800C25931 /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
+		6FF2BAEE1C0B33F800C25931 /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		6FF2BAEF1C0B33F800C25931 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		6FF2BAF01C0B33F800C25931 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +90,10 @@
 				6F8FB9F01C0B1DC500812CFC /* Supporting Files */,
 				6FF2BADB1C0B206C00C25931 /* XYTabBarController.h */,
 				6FF2BADC1C0B206C00C25931 /* XYTabBarController.m */,
+				6FF2BAE61C0B322B00C25931 /* XYAdViewController.h */,
+				6FF2BAE71C0B322B00C25931 /* XYAdViewController.m */,
+				6FF2BAE91C0B32A700C25931 /* XYAdViewController.xib */,
+				6F13EA7C1C0B403A00810E0F /* BaisiBudejie.pch */,
 			);
 			path = BaisiBudejie;
 			sourceTree = "<group>";
@@ -81,9 +101,22 @@
 		6F8FB9F01C0B1DC500812CFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6FF2BAEB1C0B33F800C25931 /* AdBackground */,
 				6F8FB9F11C0B1DC500812CFC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6FF2BAEB1C0B33F800C25931 /* AdBackground */ = {
+			isa = PBXGroup;
+			children = (
+				6FF2BAEC1C0B33F800C25931 /* LaunchImage-568h@2x.png */,
+				6FF2BAED1C0B33F800C25931 /* LaunchImage-800-667h@2x.png */,
+				6FF2BAEE1C0B33F800C25931 /* LaunchImage-800-Portrait-736h@3x.png */,
+				6FF2BAEF1C0B33F800C25931 /* LaunchImage.png */,
+				6FF2BAF01C0B33F800C25931 /* LaunchImage@2x.png */,
+			);
+			path = AdBackground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +178,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FF2BAF21C0B33F800C25931 /* LaunchImage-800-667h@2x.png in Resources */,
 				6F8FBA001C0B1DC500812CFC /* LaunchScreen.storyboard in Resources */,
 				6F8FB9FD1C0B1DC500812CFC /* Assets.xcassets in Resources */,
+				6FF2BAF41C0B33F800C25931 /* LaunchImage.png in Resources */,
+				6FF2BAF11C0B33F800C25931 /* LaunchImage-568h@2x.png in Resources */,
+				6FF2BAF51C0B33F800C25931 /* LaunchImage@2x.png in Resources */,
+				6FF2BAF31C0B33F800C25931 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
+				6FF2BAEA1C0B32A700C25931 /* XYAdViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +198,7 @@
 			files = (
 				6FF2BADD1C0B206C00C25931 /* XYTabBarController.m in Sources */,
 				6FF2BAE31C0B226A00C25931 /* UIColor+RandomColor.m in Sources */,
+				6FF2BAE81C0B322B00C25931 /* XYAdViewController.m in Sources */,
 				6FF2BAE01C0B218400C25931 /* UIImage+Image.m in Sources */,
 				6F8FB9F51C0B1DC500812CFC /* AppDelegate.m in Sources */,
 				6F8FB9F21C0B1DC500812CFC /* main.m in Sources */,
@@ -264,6 +304,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BaisiBudejie/BaisiBudejie.pch;
 				INFOPLIST_FILE = BaisiBudejie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = backy.BaisiBudejie;
@@ -276,6 +318,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BaisiBudejie/BaisiBudejie.pch;
 				INFOPLIST_FILE = BaisiBudejie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = backy.BaisiBudejie;
