@@ -14,7 +14,6 @@
 		6FF2BADD1C0B206C00C25931 /* XYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BADC1C0B206C00C25931 /* XYTabBarController.m */; };
 		6FF2BAE01C0B218400C25931 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BADF1C0B218400C25931 /* UIImage+Image.m */; };
 		6FF2BAE31C0B226A00C25931 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BAE21C0B226A00C25931 /* UIColor+RandomColor.m */; };
-		6FF2BAE51C0B277F00C25931 /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2BAE41C0B277F00C25931 /* ReadMe.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		6FF2BADF1C0B218400C25931 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		6FF2BAE11C0B226A00C25931 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 		6FF2BAE21C0B226A00C25931 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
-		6FF2BAE41C0B277F00C25931 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 		6F8FB9F01C0B1DC500812CFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6FF2BAE41C0B277F00C25931 /* ReadMe.md */,
 				6F8FB9F11C0B1DC500812CFC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -162,7 +159,6 @@
 			files = (
 				6FF2BADD1C0B206C00C25931 /* XYTabBarController.m in Sources */,
 				6FF2BAE31C0B226A00C25931 /* UIColor+RandomColor.m in Sources */,
-				6FF2BAE51C0B277F00C25931 /* ReadMe.md in Sources */,
 				6FF2BAE01C0B218400C25931 /* UIImage+Image.m in Sources */,
 				6F8FB9F51C0B1DC500812CFC /* AppDelegate.m in Sources */,
 				6F8FB9F21C0B1DC500812CFC /* main.m in Sources */,
