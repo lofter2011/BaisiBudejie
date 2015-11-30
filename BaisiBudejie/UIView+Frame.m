@@ -84,7 +84,7 @@
 // width的get/set方法实现
 - (void)setXy_width:(CGFloat)xy_width
 {
-    CGRect bounds = self.frame;
+    CGRect bounds = self.bounds;
     
     bounds.size.width = xy_width;
     
@@ -99,7 +99,7 @@
 // height的get/set方法实现
 - (void)setXy_height:(CGFloat)xy_height
 {
-    CGRect bounds = self.frame;
+    CGRect bounds = self.bounds;
     
     bounds.size.height = xy_height;
     

@@ -151,4 +151,81 @@ screenHeight :
 
 注意: 只有属性或方法后面带有`UI_APPEARANCE_SELECTOR`的宏, 就可以通过appearance来统一设置
 
-####方法抽取Tips: 涉及到中文输入的参数放在最后面, 先输中文的话后面参数会没有自动提示
+######方法抽取Tips: 涉及到中文输入的参数放在最后面, 先输中文的话后面参数会没有自动提示
+
+### 发布按钮
+- 作用:
+	- app中该按钮点击之后用于发布一些新东西. 界面会类似于modal弹出东西, 需要特殊处理
+
+- 布局
+	- 发布按钮需要添加到UITabBar上, 居中
+
+####方案1: ~~添加占位控制器~~
+添加一个空的UIViewController作为占位控制器, 不设置标题和图片, 然后用发布按钮挡住后面的UIBarButton.
+
+- 操作
+	- 在viewDidLoad方法中添加按钮
+
+	- 出现的问题:
+		- 我们发现按钮不能点击, 打开调试视图发现按钮在最下面
+	- 原因:
+		- 在viewDidLoad方法中调用之后, 发布按钮被添加到UITabBar中, 但是TabBarButton还没有添加, UITabBar会在比较靠后的时间才添加TabBarButton
+	- 解决办法: 尽可能迟的添加发布按钮		
+		- 我们在viewWillAppear添加 解决这个问题. 但是因为viewWillA片per会执行多次, 所以按钮也被添加了多次
+
+		```
+		调用时刻不同, 而且
+		viewDidLoad只调用一次
+		viewWillAppear会调用多次
+		```
+		- 那就只让发布按钮的创建添加代码只执行一次
+			1. dispatch_onece
+			2. 添加一个记录属性
+			3. 按钮懒加载
+
+至此解决了按钮不能点击, 或者添加多次的问题
+#####总结:
+
+这么做虽然完成了需求, 但是多了一个TabBarButton, 多了一个控制器, 逼死强迫症.
+
+这个方案添加简单, 但是不能知道确切的布局时刻, ***所以不要过度依赖于控制器的生命周期方法***
+
+####方案2: 修改TabBarButton的frame
+遍历TabBar来挨个挪动TabBarButton的位置(减小宽度, 前两个左移, 后两个右移)
+
+- 这样做的话, 就需要在viewDidAppear方法里调用才行
+- 但是我们发现UITabBarButton 可以改变位置, 不能改变尺寸
+	- 如果想调整tabbar内部子控件frame, 那么重写tabbar的layoutSubviews
+
+- 解决方案
+	- 新建一个类继承自UITabBar, 重写layoutSubviews. 然后用我们自定义的TabBar覆盖系统的TabBar
+	
+	```
+	- (void)replaceTabBar
+	{
+    	[self setValue:[[XYTabBar alloc] init] forKeyPath:@"tabBar"];
+	}
+	```
+	- 疑惑:
+		- 替换了tabbar之后, 并没有给它添加子控件, 但是为什么tabbarbutton都添加上去了? 
+	- 解答:
+		- 因为添加的时候是viewDidLoad, 之前我们发现viewDidLoad之后, tabbarbutton其实还没添加上去. 直到viewWillAppear才添加进去. 到哪个时候, self.tabBar已经替换成我们自己定义的了
+
+既然已经封装了TabBar了, 加号按钮也是加到TabBar上了, 那干脆就把加号按钮封装进TabBar中, 在layoutSubviews中为其布局就ok!
+
+- 细节
+	- 我们都知道,UIButton内部有imageView和textLabel两个子控件, 但是如果只设置了标题, 我们在调试视图中发现按钮没有imageView子控件<br/><br/>
+- 由此我们发现
+	- 苹果的按钮中imageView和Label都是懒加载的, 性能可靠<br/><br/>
+- 因此
+	- 我们在封装子控件的时候, 也可以采用懒加载, 用到时再创建
+
+
+该方案优点:
+
+1. 不需要多添加控制器和TabBarButton, 节省了内存空间
+2. 不用去思考在控制器的哪个生命周期方法来做
+3. 封装了一切和tabbar相关的东西, 控制器不需要关心tabbar里面的东西
+
+
+到此为止, 主界面的UITabBar我们就设置完了

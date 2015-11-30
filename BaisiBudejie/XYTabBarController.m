@@ -9,11 +9,11 @@
 #import "XYTabBarController.h"
 #import "UIImage+Image.h"
 #import "UIColor+RandomColor.h"
+#import "XYTabBar.h"
 
 @interface XYTabBarController ()
 
-/** 发布按钮 */
-@property (nonatomic, weak) UIButton *publishButton;
+
 @end
 
 @implementation XYTabBarController
@@ -26,12 +26,9 @@
     
     // 添加所有的子控制器
     [self setUpAllChildVcs];
-
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self publishButton];
+    
+    // 替换TabBar
+    [self replaceTabBar];
 }
 
 /**
@@ -64,8 +61,6 @@
     
     [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon" title:@"新帖"];
     
-    [self setUpOneChildVc:[[UIViewController alloc] init] image:nil selectedImage:nil title:nil];
-    
     [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon" title:@"关注"];
 
     [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon" title:@"我"];
@@ -93,25 +88,12 @@
     [self addChildViewController:childVc];
 }
 
-#pragma mark - 逻辑操作
-- (void)publishClick
+/**
+ *  用自定义的TabBar替换系统的TabBar
+ */
+- (void)replaceTabBar
 {
-    XYFuncLocation;
+    [self setValue:[[XYTabBar alloc] init] forKeyPath:@"tabBar"];
 }
 
-#pragma mark - 懒加载
-- (UIButton *)publishButton
-{
-    if (!_publishButton) {
-        UIButton *publishButton = [[UIButton alloc] init];
-        [publishButton setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
-        [publishButton setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
-        publishButton.xy_size = self.tabBar.xy_size;
-        publishButton.center = self.tabBar.center;
-        [publishButton addTarget:self action:@selector(publishClick) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:publishButton];
-        _publishButton = publishButton;
-    }
-    return _publishButton;
-}
 @end
