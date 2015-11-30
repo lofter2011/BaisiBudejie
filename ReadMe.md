@@ -229,3 +229,61 @@ screenHeight :
 
 
 到此为止, 主界面的UITabBar我们就设置完了
+
+###主界面的子控制器细节
+- 每个子控制器都需要自定义, 在我们不确定控制器的具体类型之前, 先创建为UIViewController.
+
+- 我们发现, 每个界面上面有导航栏, 所以我们不能直接将相应的控制器来做TabBarController的子控制器, 而是需要先包装一层导航控制器
+
+	- 精华Nav -> 精华Vc
+	- 新帖Nav -> 新帖Vc
+	- 关注Nav -> 关注Vc
+	- 我Nav -> 我Vc
+
+之前设置的控制器不同颜色, 就是为了证明, 几个子控制器的view, 现在我们取消掉之前设置的随机颜色. 百思的控制器颜色其实是灰色的, 我们可以通过测色剂看看
+
+- 不要再创建的时候直接给每一个控制器view设置属性,  统一设置的时候, 这个控制器的view被访问了, 也就是说, app一启动, 所有的控制器都被创建了!
+
+- 控制器应该是懒加载的, 控制器view的属性应当等到用到时候再设置
+
+### 调整项目结构
+随着类逐渐增多, 全部放在一块项目显得非常臃肿, 我们调整下项目的结构
+
+- Classes
+- Resources
+
+
+## 设置每个控制器
+---
+
+- 设置每个控制器顶部的标题navigationItem.title或者navigationItem.titleView
+
+- 在控制器中建议使用self.navigationItem.title/self.tabBarItem.title取代之前统一设置的self.title
+
+凡是有关于left, right这些位置有关的, 设置frame是没用的, 会被系统改回去
+
+
+- 顶部是图片的: 设置navigationItem.titleView
+
+	- 设置图片之后不显示, 图片没大小, 进行sizeToFit就好了
+
+	```
+	UIImageView *titleView = [[UIImageView alloc] init];
+	titleView.image = [UIImage imageNamed:@"MainTitle"];
+	[titleView sizeToFit];
+	self.navigationItem.titleView = titleView;
+	```
+
+	- 但是 , 直接通过imageView的`initWithImage:`会更爽! 机智如我, 一行顶四行
+
+	```
+	self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+	```
+
+
+- 导航栏上面可能出现两行文字, 文字大小还不一样
+	- 方案1:
+		- titleView设置个UIView, UIView里面添加俩label
+	- 方案2: 
+		- label控件可以显示字符串或者富文本
+

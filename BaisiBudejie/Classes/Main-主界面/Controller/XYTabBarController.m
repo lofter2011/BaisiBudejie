@@ -7,9 +7,14 @@
 //
 
 #import "XYTabBarController.h"
-#import "UIImage+Image.h"
-#import "UIColor+RandomColor.h"
 #import "XYTabBar.h"
+
+#import "UIImage+Image.h"
+
+#import "XYEssenceViewController.h"
+#import "XYNewViewController.h"
+#import "XYFollowViewController.h"
+#import "XYMeViewController.h"
 
 @interface XYTabBarController ()
 
@@ -57,13 +62,17 @@
  */
 - (void)setUpAllChildVcs
 {
-    [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon" title:@"精华"];
+    UINavigationController *essenceNav = [[UINavigationController alloc] initWithRootViewController:[[XYEssenceViewController alloc] init]];
+    [self setUpOneChildVc:essenceNav image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon" title:@"精华"];
     
-    [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon" title:@"新帖"];
+    UINavigationController *newNav = [[UINavigationController alloc] initWithRootViewController:[[XYNewViewController alloc] init]];
+    [self setUpOneChildVc:newNav image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon" title:@"新帖"];
     
-    [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon" title:@"关注"];
+    UINavigationController *followNav = [[UINavigationController alloc] initWithRootViewController:[[XYFollowViewController alloc] init]];
+    [self setUpOneChildVc:followNav image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon" title:@"关注"];
 
-    [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon" title:@"我"];
+    UINavigationController *meNav = [[UINavigationController alloc] initWithRootViewController:[[XYMeViewController alloc] init]];
+    [self setUpOneChildVc:meNav image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon" title:@"我"];
 }
 
 /**
@@ -76,9 +85,6 @@
  */
 - (void)setUpOneChildVc:(UIViewController *)childVc image:(NSString *)imageName selectedImage:(NSString *)selectedImageName title:(NSString *)title
 {
-    // 随机背景色
-    childVc.view.backgroundColor = [UIColor colorRandom];
-
     // tabBarItem的标题和图标
     childVc.tabBarItem.title = title;
     // imageNamed:如果参数为nil或空串的话, 会报警告. length>0会排除这两种情况, 消除警告
