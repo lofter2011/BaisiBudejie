@@ -84,9 +84,7 @@
 		6F8FB9EF1C0B1DC500812CFC /* BaisiBudejie */ = {
 			isa = PBXGroup;
 			children = (
-				6FCC35FD1C0C839C000ECB8E /* Resources */,
 				6FCC35C81C0C8391000ECB8E /* Classes */,
-				6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */,
 				6F8FB9F01C0B1DC500812CFC /* Supporting Files */,
 			);
 			path = BaisiBudejie;
@@ -95,6 +93,8 @@
 		6F8FB9F01C0B1DC500812CFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6FCC35FD1C0C839C000ECB8E /* Resources */,
+				6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
