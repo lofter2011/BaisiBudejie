@@ -44,8 +44,6 @@ static NSTimeInterval const XYAdDuration = 3.0;
     
     // 初始化广告
     [self setUpAd];
-    
-
 }
 
 #pragma mark - 初始化
@@ -109,7 +107,6 @@ static NSTimeInterval const XYAdDuration = 3.0;
     if (self.leftTime < 0) {
         [self skip];
     }
-    
 }
 
 /**
@@ -117,13 +114,11 @@ static NSTimeInterval const XYAdDuration = 3.0;
  */
 - (IBAction)skip
 {
-    
     // 关闭定时器
     [self.adTimer invalidate];
     
     // 跳到下一个界面(窗口根控制器)
     appKeyWidow.rootViewController = [[XYTabBarController alloc] init];
-    
 }
 
 /**
@@ -144,7 +139,8 @@ static NSTimeInterval const XYAdDuration = 3.0;
     
     appKeyWidow.rootViewController = adVc;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    // 进入广告详情3s后跳转到主界面(懒得搭建界面了, 反正一般广告也是打开网页)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         appKeyWidow.rootViewController = [[XYTabBarController alloc] init];
     });
 }

@@ -12,6 +12,8 @@
 
 @interface XYTabBarController ()
 
+/** 发布按钮 */
+@property (nonatomic, weak) UIButton *publishButton;
 @end
 
 @implementation XYTabBarController
@@ -27,6 +29,10 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self publishButton];
+}
 
 /**
  *  设置所有UITabBarItem的文字属性
@@ -58,6 +64,8 @@
     
     [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon" title:@"新帖"];
     
+    [self setUpOneChildVc:[[UIViewController alloc] init] image:nil selectedImage:nil title:nil];
+    
     [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon" title:@"关注"];
 
     [self setUpOneChildVc:[[UIViewController alloc] init] image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon" title:@"我"];
@@ -78,11 +86,32 @@
 
     // tabBarItem的标题和图标
     childVc.tabBarItem.title = title;
-    childVc.tabBarItem.image = [UIImage imageNamed:imageName];
-    childVc.tabBarItem.selectedImage = [UIImage imageWithOriginalImageName:selectedImageName];
+    // imageNamed:如果参数为nil或空串的话, 会报警告. length>0会排除这两种情况, 消除警告
+    if (imageName.length) childVc.tabBarItem.image = [UIImage imageNamed:imageName];
+    if (selectedImageName.length) childVc.tabBarItem.selectedImage = [UIImage imageWithOriginalImageName:selectedImageName];
 
     [self addChildViewController:childVc];
 }
 
+#pragma mark - 逻辑操作
+- (void)publishClick
+{
+    XYFuncLocation;
+}
 
+#pragma mark - 懒加载
+- (UIButton *)publishButton
+{
+    if (!_publishButton) {
+        UIButton *publishButton = [[UIButton alloc] init];
+        [publishButton setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
+        [publishButton setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        publishButton.xy_size = self.tabBar.xy_size;
+        publishButton.center = self.tabBar.center;
+        [publishButton addTarget:self action:@selector(publishClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:publishButton];
+        _publishButton = publishButton;
+    }
+    return _publishButton;
+}
 @end
