@@ -7,6 +7,7 @@
 //
 
 #import "XYEssenceViewController.h"
+#import "XYRecommendTagViewController.h"
 
 @interface XYEssenceViewController ()
 
@@ -28,11 +29,12 @@
 
 #pragma mark - 监听
 /**
- *  推荐标签
+ *  点击推荐标签, 跳转到推荐标签控制器
  */
 - (void)tagClick
 {
-    XYFuncLocation;
+    XYRecommendTagViewController *recommendTagVc = [[XYRecommendTagViewController alloc] init];
+    [self.navigationController pushViewController:recommendTagVc animated:YES];
 }
 
 @end

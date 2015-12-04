@@ -7,6 +7,7 @@
 //
 
 #import "XYMeViewController.h"
+#import "XYSettingViewController.h"
 
 @interface XYMeViewController ()
 
@@ -41,11 +42,13 @@
 }
 
 /**
- *  设置
+ *  点击设置, 跳转到设置控制器
  */
 - (void)settingClick
 {
-    XYFuncLocation
+    XYSettingViewController *settingVc = [[XYSettingViewController alloc] init];
+    
+    [self.navigationController pushViewController:settingVc animated:YES];
 }
 
 @end

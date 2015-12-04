@@ -7,6 +7,7 @@
 //
 
 #import "XYFollowViewController.h"
+#import "XYRecommendFollowViewController.h"
 
 @interface XYFollowViewController ()
 
@@ -28,11 +29,13 @@
 
 #pragma mark - 监听
 /**
- *  推荐关注
+ *  点击推荐关注, 跳转到推荐关注控制器
  */
 - (void)followClick
 {
-    XYFuncLocation;
+    XYRecommendFollowViewController *recommendFollowVc = [[XYRecommendFollowViewController alloc] init];
+    
+    [self.navigationController pushViewController:recommendFollowVc animated:YES];
 }
 
 @end
