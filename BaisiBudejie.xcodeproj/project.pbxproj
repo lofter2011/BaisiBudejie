@@ -12,6 +12,7 @@
 		6FBF61111C11BA81009A62F5 /* XYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61101C11BA81009A62F5 /* XYSettingViewController.m */; };
 		6FBF61251C11BC96009A62F5 /* XYRecommendTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61221C11BC96009A62F5 /* XYRecommendTagViewController.m */; };
 		6FBF61281C11BCA5009A62F5 /* XYRecommendFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61271C11BCA5009A62F5 /* XYRecommendFollowViewController.m */; };
+		6FBF612B1C11BEBA009A62F5 /* XYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF612A1C11BEBA009A62F5 /* XYNavigationController.m */; };
 		6FCC36061C0C839C000ECB8E /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC35FF1C0C839C000ECB8E /* LaunchImage-568h@2x.png */; };
 		6FCC36071C0C839C000ECB8E /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36001C0C839C000ECB8E /* LaunchImage-800-667h@2x.png */; };
 		6FCC36081C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36011C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png */; };
@@ -44,6 +45,8 @@
 		6FBF61221C11BC96009A62F5 /* XYRecommendTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRecommendTagViewController.m; sourceTree = "<group>"; };
 		6FBF61261C11BCA5009A62F5 /* XYRecommendFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYRecommendFollowViewController.h; sourceTree = "<group>"; };
 		6FBF61271C11BCA5009A62F5 /* XYRecommendFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRecommendFollowViewController.m; sourceTree = "<group>"; };
+		6FBF61291C11BEBA009A62F5 /* XYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYNavigationController.h; sourceTree = "<group>"; };
+		6FBF612A1C11BEBA009A62F5 /* XYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYNavigationController.m; sourceTree = "<group>"; };
 		6FCC35FF1C0C839C000ECB8E /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
 		6FCC36001C0C839C000ECB8E /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
 		6FCC36011C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
@@ -331,6 +334,8 @@
 			children = (
 				6FCC36201C0C87B2000ECB8E /* XYTabBarController.h */,
 				6FCC36211C0C87B2000ECB8E /* XYTabBarController.m */,
+				6FBF61291C11BEBA009A62F5 /* XYNavigationController.h */,
+				6FBF612A1C11BEBA009A62F5 /* XYNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				6FBF61281C11BCA5009A62F5 /* XYRecommendFollowViewController.m in Sources */,
 				6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */,
 				6FCC363A1C0C87B2000ECB8E /* XYAdViewController.m in Sources */,
+				6FBF612B1C11BEBA009A62F5 /* XYNavigationController.m in Sources */,
 				6FCC36421C0C87B2000ECB8E /* main.m in Sources */,
 				6FCC363D1C0C87B2000ECB8E /* XYTabBar.m in Sources */,
 			);

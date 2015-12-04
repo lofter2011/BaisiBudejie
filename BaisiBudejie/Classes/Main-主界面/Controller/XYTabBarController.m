@@ -8,6 +8,7 @@
 
 #import "XYTabBarController.h"
 #import "XYTabBar.h"
+#import "XYNavigationController.h"
 
 #import "UIImage+Image.h"
 
@@ -62,16 +63,16 @@
  */
 - (void)setUpAllChildVcs
 {
-    UINavigationController *essenceNav = [[UINavigationController alloc] initWithRootViewController:[[XYEssenceViewController alloc] init]];
+    XYNavigationController *essenceNav = [[XYNavigationController alloc] initWithRootViewController:[[XYEssenceViewController alloc] init]];
     [self setUpOneChildVc:essenceNav image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon" title:@"精华"];
     
-    UINavigationController *newNav = [[UINavigationController alloc] initWithRootViewController:[[XYNewViewController alloc] init]];
+    XYNavigationController *newNav = [[XYNavigationController alloc] initWithRootViewController:[[XYNewViewController alloc] init]];
     [self setUpOneChildVc:newNav image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon" title:@"新帖"];
     
-    UINavigationController *followNav = [[UINavigationController alloc] initWithRootViewController:[[XYFollowViewController alloc] init]];
+    XYNavigationController *followNav = [[XYNavigationController alloc] initWithRootViewController:[[XYFollowViewController alloc] init]];
     [self setUpOneChildVc:followNav image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon" title:@"关注"];
 
-    UINavigationController *meNav = [[UINavigationController alloc] initWithRootViewController:[[XYMeViewController alloc] init]];
+    XYNavigationController *meNav = [[XYNavigationController alloc] initWithRootViewController:[[XYMeViewController alloc] init]];
     [self setUpOneChildVc:meNav image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon" title:@"我"];
 }
 
