@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // 设置导航栏背景
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    
+    // 设置导航栏文字
+    [self.navigationBar setTitleTextAttributes:@{
+                                                 NSFontAttributeName : [UIFont boldSystemFontOfSize:18]
+                                                 }];
+    
     // 滑动返回手势执行与否由代理决定
     self.interactivePopGestureRecognizer.delegate = self;
 }
@@ -51,8 +59,6 @@
         // 当push的时候, 隐藏TabBar
         viewController.hidesBottomBarWhenPushed = YES;
     }
-    
-    
     
     [super pushViewController:viewController animated:animated];
     

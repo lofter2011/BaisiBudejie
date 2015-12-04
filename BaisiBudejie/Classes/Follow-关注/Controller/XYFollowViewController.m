@@ -8,6 +8,7 @@
 
 #import "XYFollowViewController.h"
 #import "XYRecommendFollowViewController.h"
+#import "XYLoginRegisterViewController.h"
 
 @interface XYFollowViewController ()
 
@@ -37,5 +38,16 @@
     
     [self.navigationController pushViewController:recommendFollowVc animated:YES];
 }
+
+/**
+ *  进入登陆注册界面
+ */
+- (IBAction)loginRegister:(id)sender {
+
+    XYLoginRegisterViewController *loginRegisterVc = [[XYLoginRegisterViewController alloc] init];
+
+    [self presentViewController:loginRegisterVc animated:YES completion:nil];
+}
+
 
 @end

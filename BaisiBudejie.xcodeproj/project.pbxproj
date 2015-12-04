@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4786671C11D0BE00E3EAB1 /* XYFollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4786661C11D0BE00E3EAB1 /* XYFollowViewController.xib */; };
+		6F47866B1C11D4A800E3EAB1 /* XYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4786691C11D4A800E3EAB1 /* XYLoginRegisterViewController.m */; };
+		6F47866C1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F47866A1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib */; };
 		6F8FBA001C0B1DC500812CFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */; };
+		6FB080611C11E1AE00A9F46C /* XYQuickLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB080601C11E1AE00A9F46C /* XYQuickLoginButton.m */; };
+		6FB080641C11E89100A9F46C /* XYLoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB080631C11E89100A9F46C /* XYLoginRegisterTextField.m */; };
 		6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */; };
 		6FBF61111C11BA81009A62F5 /* XYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61101C11BA81009A62F5 /* XYSettingViewController.m */; };
 		6FBF61251C11BC96009A62F5 /* XYRecommendTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61221C11BC96009A62F5 /* XYRecommendTagViewController.m */; };
@@ -35,8 +40,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F4786661C11D0BE00E3EAB1 /* XYFollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYFollowViewController.xib; sourceTree = "<group>"; };
+		6F4786681C11D4A800E3EAB1 /* XYLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYLoginRegisterViewController.h; sourceTree = "<group>"; };
+		6F4786691C11D4A800E3EAB1 /* XYLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYLoginRegisterViewController.m; sourceTree = "<group>"; };
+		6F47866A1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		6F8FB9ED1C0B1DC500812CFC /* BaisiBudejie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaisiBudejie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8FB9FF1C0B1DC500812CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FB0805F1C11E1AE00A9F46C /* XYQuickLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQuickLoginButton.h; sourceTree = "<group>"; };
+		6FB080601C11E1AE00A9F46C /* XYQuickLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQuickLoginButton.m; sourceTree = "<group>"; };
+		6FB080621C11E89100A9F46C /* XYLoginRegisterTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYLoginRegisterTextField.h; sourceTree = "<group>"; };
+		6FB080631C11E89100A9F46C /* XYLoginRegisterTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYLoginRegisterTextField.m; sourceTree = "<group>"; };
 		6FBF610C1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XYExtension.h"; sourceTree = "<group>"; };
 		6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+XYExtension.m"; sourceTree = "<group>"; };
 		6FBF610F1C11BA81009A62F5 /* XYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYSettingViewController.h; sourceTree = "<group>"; };
@@ -129,6 +142,9 @@
 		6FBF61091C11B3A9009A62F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6F4786681C11D4A800E3EAB1 /* XYLoginRegisterViewController.h */,
+				6F4786691C11D4A800E3EAB1 /* XYLoginRegisterViewController.m */,
+				6F47866A1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +159,10 @@
 		6FBF610B1C11B3A9009A62F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6FB0805F1C11E1AE00A9F46C /* XYQuickLoginButton.h */,
+				6FB080601C11E1AE00A9F46C /* XYQuickLoginButton.m */,
+				6FB080621C11E89100A9F46C /* XYLoginRegisterTextField.h */,
+				6FB080631C11E89100A9F46C /* XYLoginRegisterTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +321,7 @@
 			children = (
 				6FCC36491C0C8A63000ECB8E /* XYFollowViewController.h */,
 				6FCC364A1C0C8A63000ECB8E /* XYFollowViewController.m */,
+				6F4786661C11D0BE00E3EAB1 /* XYFollowViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -513,9 +534,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4786671C11D0BE00E3EAB1 /* XYFollowViewController.xib in Resources */,
 				6FCC360A1C0C839C000ECB8E /* LaunchImage@2x.png in Resources */,
 				6FCC36061C0C839C000ECB8E /* LaunchImage-568h@2x.png in Resources */,
 				6FCC36091C0C839C000ECB8E /* LaunchImage.png in Resources */,
+				6F47866C1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib in Resources */,
 				6F8FBA001C0B1DC500812CFC /* LaunchScreen.storyboard in Resources */,
 				6FCC363B1C0C87B2000ECB8E /* XYAdViewController.xib in Resources */,
 				6FCC36081C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
@@ -532,13 +555,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FCC36451C0C87E8000ECB8E /* XYEssenceViewController.m in Sources */,
+				6FB080641C11E89100A9F46C /* XYLoginRegisterTextField.m in Sources */,
 				6FCC364E1C0C8AA7000ECB8E /* XYMeViewController.m in Sources */,
 				6FCC363E1C0C87B2000ECB8E /* AppDelegate.m in Sources */,
 				6FCC364B1C0C8A63000ECB8E /* XYFollowViewController.m in Sources */,
+				6FB080611C11E1AE00A9F46C /* XYQuickLoginButton.m in Sources */,
 				6FCC363F1C0C87B2000ECB8E /* UIColor+RandomColor.m in Sources */,
 				6FBF61251C11BC96009A62F5 /* XYRecommendTagViewController.m in Sources */,
 				6FCC363C1C0C87B2000ECB8E /* XYTabBarController.m in Sources */,
 				6FCC36481C0C8A03000ECB8E /* XYNewViewController.m in Sources */,
+				6F47866B1C11D4A800E3EAB1 /* XYLoginRegisterViewController.m in Sources */,
 				6FCC36411C0C87B2000ECB8E /* UIView+Frame.m in Sources */,
 				6FBF61111C11BA81009A62F5 /* XYSettingViewController.m in Sources */,
 				6FCC36401C0C87B2000ECB8E /* UIImage+Image.m in Sources */,
