@@ -13,15 +13,15 @@
 // size的get/set方法实现
 - (void)setXy_size:(CGSize)xy_size
 {
-    CGRect bounds = self.bounds;
+    CGRect frame = self.frame;
     
-    bounds.size = xy_size;
+    frame.size = xy_size;
     
-    self.bounds = bounds;
+    self.frame = frame;
 }
 - (CGSize)xy_size
 {
-    return self.bounds.size;
+    return self.frame.size;
 }
 
 #pragma mark - 中心点x,y
@@ -84,31 +84,31 @@
 // width的get/set方法实现
 - (void)setXy_width:(CGFloat)xy_width
 {
-    CGRect bounds = self.bounds;
+    CGRect frame = self.frame;
     
-    bounds.size.width = xy_width;
+    frame.size.width = xy_width;
     
-    self.bounds = bounds;
+    self.frame = frame;
 }
 
 - (CGFloat)xy_width
 {
-    return self.bounds.size.width;
+    return self.frame.size.width;
 }
 
 // height的get/set方法实现
 - (void)setXy_height:(CGFloat)xy_height
 {
-    CGRect bounds = self.bounds;
+    CGRect frame = self.frame;
     
-    bounds.size.height = xy_height;
+    frame.size.height = xy_height;
     
-    self.bounds = bounds;
+    self.frame = frame;
 }
 
 - (CGFloat)xy_height
 {
-    return self.bounds.size.height;
+    return self.frame.size.height;
 }
 
 @end

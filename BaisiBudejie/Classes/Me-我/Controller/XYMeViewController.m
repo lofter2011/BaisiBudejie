@@ -21,6 +21,31 @@
     
     // NavigationItem标题
     self.navigationItem.title = @"我的";
+
+    UIBarButtonItem *moonItem = [UIBarButtonItem xy_itemWithImage:@"mine-moon-icon" highlightedImage:@"mine-moon-icon-click" target:self action:@selector(moonClick)];
+    UIBarButtonItem *settingItem = [UIBarButtonItem xy_itemWithImage:@"mine-setting-icon" highlightedImage:@"mine-setting-icon-click" target:self action:@selector(settingClick)];
+    
+    self.navigationItem.rightBarButtonItems = @[
+                                                settingItem,
+                                                moonItem
+                                                ];
+}
+
+#pragma mark - 监听
+/**
+ *  夜间模式
+ */
+- (void)moonClick
+{
+    XYFuncLocation
+}
+
+/**
+ *  设置
+ */
+- (void)settingClick
+{
+    XYFuncLocation
 }
 
 @end

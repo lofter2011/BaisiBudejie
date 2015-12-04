@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F8FBA001C0B1DC500812CFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */; };
+		6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */; };
 		6FCC36061C0C839C000ECB8E /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC35FF1C0C839C000ECB8E /* LaunchImage-568h@2x.png */; };
 		6FCC36071C0C839C000ECB8E /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36001C0C839C000ECB8E /* LaunchImage-800-667h@2x.png */; };
 		6FCC36081C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36011C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		6F8FB9ED1C0B1DC500812CFC /* BaisiBudejie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaisiBudejie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8FB9FF1C0B1DC500812CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FBF610C1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XYExtension.h"; sourceTree = "<group>"; };
+		6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+XYExtension.m"; sourceTree = "<group>"; };
 		6FCC35FF1C0C839C000ECB8E /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
 		6FCC36001C0C839C000ECB8E /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
 		6FCC36011C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
@@ -109,6 +112,27 @@
 				6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6FBF61091C11B3A9009A62F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6FBF610A1C11B3A9009A62F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FBF610B1C11B3A9009A62F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6FCC35FD1C0C839C000ECB8E /* Resources */ = {
@@ -351,10 +375,13 @@
 		6FCC362E1C0C87B2000ECB8E /* Other-其他 */ = {
 			isa = PBXGroup;
 			children = (
+				6FBF61091C11B3A9009A62F5 /* Controller */,
+				6FBF610A1C11B3A9009A62F5 /* Model */,
+				6FBF610B1C11B3A9009A62F5 /* View */,
+				6FCC36321C0C87B2000ECB8E /* Category */,
 				6FCC362F1C0C87B2000ECB8E /* AppDelegate.h */,
 				6FCC36301C0C87B2000ECB8E /* AppDelegate.m */,
 				6FCC36311C0C87B2000ECB8E /* BaisiBudejie.pch */,
-				6FCC36321C0C87B2000ECB8E /* Category */,
 				6FCC36391C0C87B2000ECB8E /* main.m */,
 			);
 			path = "Other-其他";
@@ -369,6 +396,8 @@
 				6FCC36361C0C87B2000ECB8E /* UIImage+Image.m */,
 				6FCC36371C0C87B2000ECB8E /* UIView+Frame.h */,
 				6FCC36381C0C87B2000ECB8E /* UIView+Frame.m */,
+				6FBF610C1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.h */,
+				6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -459,6 +488,7 @@
 				6FCC36481C0C8A03000ECB8E /* XYNewViewController.m in Sources */,
 				6FCC36411C0C87B2000ECB8E /* UIView+Frame.m in Sources */,
 				6FCC36401C0C87B2000ECB8E /* UIImage+Image.m in Sources */,
+				6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */,
 				6FCC363A1C0C87B2000ECB8E /* XYAdViewController.m in Sources */,
 				6FCC36421C0C87B2000ECB8E /* main.m in Sources */,
 				6FCC363D1C0C87B2000ECB8E /* XYTabBar.m in Sources */,
@@ -567,6 +597,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaisiBudejie/Classes/Other-其他/BaisiBudejie.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BaisiBudejie/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = backy.BaisiBudejie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -581,6 +612,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaisiBudejie/Classes/Other-其他/BaisiBudejie.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BaisiBudejie/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = backy.BaisiBudejie;
 				PRODUCT_NAME = "$(TARGET_NAME)";

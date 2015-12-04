@@ -21,5 +21,18 @@
     
     // NavigationItem标题
     self.navigationItem.title = @"我的关注";
+
+    // 导航栏按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem xy_itemWithImage:@"friendsRecommentIcon" highlightedImage:@"friendsRecommentIcon-click" target:self action:@selector(followClick)];
 }
+
+#pragma mark - 监听
+/**
+ *  推荐关注
+ */
+- (void)followClick
+{
+    XYFuncLocation;
+}
+
 @end
