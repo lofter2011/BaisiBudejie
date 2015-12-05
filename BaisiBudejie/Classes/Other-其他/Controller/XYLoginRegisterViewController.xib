@@ -51,7 +51,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3m-02-zrQ" userLabel="中间登录">
-                    <rect key="frame" x="0.0" y="144" width="600" height="200"/>
+                    <rect key="frame" x="0.0" y="144" width="600" height="187"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_rgister_textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xBl-XC-tAg" userLabel="用户名密码背景图">
                             <rect key="frame" x="167" y="0.0" width="266" height="92"/>
@@ -95,12 +95,12 @@
                         <constraint firstItem="Lt4-53-xZc" firstAttribute="top" secondItem="xBl-XC-tAg" secondAttribute="top" id="AGd-bR-pWi"/>
                         <constraint firstItem="esV-Zh-65b" firstAttribute="leading" secondItem="xBl-XC-tAg" secondAttribute="leading" id="AfG-MV-hPf"/>
                         <constraint firstItem="Lt4-53-xZc" firstAttribute="height" secondItem="xBl-XC-tAg" secondAttribute="height" multiplier="0.5" id="F2u-fz-YU8"/>
+                        <constraint firstAttribute="bottom" secondItem="e57-N7-20l" secondAttribute="bottom" id="FjJ-Vj-TQA"/>
                         <constraint firstItem="Hd0-Lm-TFv" firstAttribute="bottom" secondItem="xBl-XC-tAg" secondAttribute="bottom" id="Fxe-P0-LEY"/>
                         <constraint firstItem="esV-Zh-65b" firstAttribute="trailing" secondItem="xBl-XC-tAg" secondAttribute="trailing" id="WZu-Wi-R4w"/>
                         <constraint firstItem="Hd0-Lm-TFv" firstAttribute="leading" secondItem="Lt4-53-xZc" secondAttribute="leading" id="c9h-xp-Vu3"/>
                         <constraint firstItem="e57-N7-20l" firstAttribute="trailing" secondItem="esV-Zh-65b" secondAttribute="trailing" id="j3k-jh-7Yr"/>
                         <constraint firstItem="Hd0-Lm-TFv" firstAttribute="trailing" secondItem="Lt4-53-xZc" secondAttribute="trailing" id="lJT-o0-rx2"/>
-                        <constraint firstAttribute="height" constant="200" id="m6r-IK-4uw"/>
                         <constraint firstItem="xBl-XC-tAg" firstAttribute="centerX" secondItem="R3m-02-zrQ" secondAttribute="centerX" id="ov2-i5-9g8"/>
                         <constraint firstItem="Lt4-53-xZc" firstAttribute="trailing" secondItem="xBl-XC-tAg" secondAttribute="trailing" constant="-10" id="pc6-yL-xP6"/>
                         <constraint firstItem="xBl-XC-tAg" firstAttribute="top" secondItem="R3m-02-zrQ" secondAttribute="top" id="ujK-pA-N2R"/>

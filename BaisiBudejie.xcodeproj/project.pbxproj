@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F2319DB1C130E3700E59895 /* NSObject+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2319DA1C130E3700E59895 /* NSObject+XYExtension.m */; };
+		6F2319DE1C13111700E59895 /* UITextField+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2319DD1C13111700E59895 /* UITextField+XYExtension.m */; };
 		6F4786671C11D0BE00E3EAB1 /* XYFollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4786661C11D0BE00E3EAB1 /* XYFollowViewController.xib */; };
 		6F47866B1C11D4A800E3EAB1 /* XYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4786691C11D4A800E3EAB1 /* XYLoginRegisterViewController.m */; };
 		6F47866C1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F47866A1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib */; };
@@ -40,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F2319D91C130E3700E59895 /* NSObject+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XYExtension.h"; sourceTree = "<group>"; };
+		6F2319DA1C130E3700E59895 /* NSObject+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XYExtension.m"; sourceTree = "<group>"; };
+		6F2319DC1C13111700E59895 /* UITextField+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+XYExtension.h"; sourceTree = "<group>"; };
+		6F2319DD1C13111700E59895 /* UITextField+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+XYExtension.m"; sourceTree = "<group>"; };
 		6F4786661C11D0BE00E3EAB1 /* XYFollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYFollowViewController.xib; sourceTree = "<group>"; };
 		6F4786681C11D4A800E3EAB1 /* XYLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6F4786691C11D4A800E3EAB1 /* XYLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYLoginRegisterViewController.m; sourceTree = "<group>"; };
@@ -471,6 +477,10 @@
 				6FCC36381C0C87B2000ECB8E /* UIView+Frame.m */,
 				6FBF610C1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.h */,
 				6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */,
+				6F2319D91C130E3700E59895 /* NSObject+XYExtension.h */,
+				6F2319DA1C130E3700E59895 /* NSObject+XYExtension.m */,
+				6F2319DC1C13111700E59895 /* UITextField+XYExtension.h */,
+				6F2319DD1C13111700E59895 /* UITextField+XYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -564,8 +574,10 @@
 				6FBF61251C11BC96009A62F5 /* XYRecommendTagViewController.m in Sources */,
 				6FCC363C1C0C87B2000ECB8E /* XYTabBarController.m in Sources */,
 				6FCC36481C0C8A03000ECB8E /* XYNewViewController.m in Sources */,
+				6F2319DE1C13111700E59895 /* UITextField+XYExtension.m in Sources */,
 				6F47866B1C11D4A800E3EAB1 /* XYLoginRegisterViewController.m in Sources */,
 				6FCC36411C0C87B2000ECB8E /* UIView+Frame.m in Sources */,
+				6F2319DB1C130E3700E59895 /* NSObject+XYExtension.m in Sources */,
 				6FBF61111C11BA81009A62F5 /* XYSettingViewController.m in Sources */,
 				6FCC36401C0C87B2000ECB8E /* UIImage+Image.m in Sources */,
 				6FBF61281C11BCA5009A62F5 /* XYRecommendFollowViewController.m in Sources */,
