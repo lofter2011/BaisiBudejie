@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F20C56A1C133B4300A78255 /* XYHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F20C5691C133B4300A78255 /* XYHTTPSessionManager.m */; };
+		6F20C56D1C133EA100A78255 /* XYRecommendTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F20C56C1C133EA100A78255 /* XYRecommendTag.m */; };
+		6F20C5731C133F7A00A78255 /* NSDictionary+PropertyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F20C5721C133F7A00A78255 /* NSDictionary+PropertyCode.m */; };
+		6F20C5771C1352F300A78255 /* XYRecommendTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F20C5751C1352F300A78255 /* XYRecommendTagCell.m */; };
+		6F20C5781C1352F300A78255 /* XYRecommendTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F20C5761C1352F300A78255 /* XYRecommendTagCell.xib */; };
 		6F2319DB1C130E3700E59895 /* NSObject+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2319DA1C130E3700E59895 /* NSObject+XYExtension.m */; };
 		6F2319DE1C13111700E59895 /* UITextField+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2319DD1C13111700E59895 /* UITextField+XYExtension.m */; };
 		6F4786671C11D0BE00E3EAB1 /* XYFollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F4786661C11D0BE00E3EAB1 /* XYFollowViewController.xib */; };
 		6F47866B1C11D4A800E3EAB1 /* XYLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4786691C11D4A800E3EAB1 /* XYLoginRegisterViewController.m */; };
 		6F47866C1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F47866A1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib */; };
-		6F8FBA001C0B1DC500812CFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */; };
 		6FB080611C11E1AE00A9F46C /* XYQuickLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB080601C11E1AE00A9F46C /* XYQuickLoginButton.m */; };
 		6FB080641C11E89100A9F46C /* XYLoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB080631C11E89100A9F46C /* XYLoginRegisterTextField.m */; };
 		6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */; };
@@ -39,9 +43,20 @@
 		6FCC36481C0C8A03000ECB8E /* XYNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36471C0C8A03000ECB8E /* XYNewViewController.m */; };
 		6FCC364B1C0C8A63000ECB8E /* XYFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC364A1C0C8A63000ECB8E /* XYFollowViewController.m */; };
 		6FCC364E1C0C8AA7000ECB8E /* XYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC364D1C0C8AA7000ECB8E /* XYMeViewController.m */; };
+		CE0BCF2319C56F263B1011F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ABAAB9C6E44050EDE78FAA /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0698BBDB3B25046F4C734828 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6F20C5681C133B4300A78255 /* XYHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYHTTPSessionManager.h; sourceTree = "<group>"; };
+		6F20C5691C133B4300A78255 /* XYHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYHTTPSessionManager.m; sourceTree = "<group>"; };
+		6F20C56B1C133EA100A78255 /* XYRecommendTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYRecommendTag.h; path = "BaisiBudejie/Classes/Other-其他/XYRecommendTag.h"; sourceTree = SOURCE_ROOT; };
+		6F20C56C1C133EA100A78255 /* XYRecommendTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYRecommendTag.m; path = "BaisiBudejie/Classes/Other-其他/XYRecommendTag.m"; sourceTree = SOURCE_ROOT; };
+		6F20C5711C133F7A00A78255 /* NSDictionary+PropertyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PropertyCode.h"; sourceTree = "<group>"; };
+		6F20C5721C133F7A00A78255 /* NSDictionary+PropertyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PropertyCode.m"; sourceTree = "<group>"; };
+		6F20C5741C1352F300A78255 /* XYRecommendTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYRecommendTagCell.h; path = "BaisiBudejie/Classes/Other-其他/XYRecommendTagCell.h"; sourceTree = SOURCE_ROOT; };
+		6F20C5751C1352F300A78255 /* XYRecommendTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYRecommendTagCell.m; path = "BaisiBudejie/Classes/Other-其他/XYRecommendTagCell.m"; sourceTree = SOURCE_ROOT; };
+		6F20C5761C1352F300A78255 /* XYRecommendTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XYRecommendTagCell.xib; path = "BaisiBudejie/Classes/Other-其他/XYRecommendTagCell.xib"; sourceTree = SOURCE_ROOT; };
 		6F2319D91C130E3700E59895 /* NSObject+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XYExtension.h"; sourceTree = "<group>"; };
 		6F2319DA1C130E3700E59895 /* NSObject+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XYExtension.m"; sourceTree = "<group>"; };
 		6F2319DC1C13111700E59895 /* UITextField+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+XYExtension.h"; sourceTree = "<group>"; };
@@ -51,7 +66,6 @@
 		6F4786691C11D4A800E3EAB1 /* XYLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6F47866A1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYLoginRegisterViewController.xib; sourceTree = "<group>"; };
 		6F8FB9ED1C0B1DC500812CFC /* BaisiBudejie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaisiBudejie.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F8FB9FF1C0B1DC500812CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FB0805F1C11E1AE00A9F46C /* XYQuickLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQuickLoginButton.h; sourceTree = "<group>"; };
 		6FB080601C11E1AE00A9F46C /* XYQuickLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQuickLoginButton.m; sourceTree = "<group>"; };
 		6FB080621C11E89100A9F46C /* XYLoginRegisterTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYLoginRegisterTextField.h; sourceTree = "<group>"; };
@@ -98,6 +112,8 @@
 		6FCC364A1C0C8A63000ECB8E /* XYFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYFollowViewController.m; sourceTree = "<group>"; };
 		6FCC364C1C0C8AA7000ECB8E /* XYMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMeViewController.h; sourceTree = "<group>"; };
 		6FCC364D1C0C8AA7000ECB8E /* XYMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMeViewController.m; sourceTree = "<group>"; };
+		C4D71F382C3283D7D5151A6C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E9ABAAB9C6E44050EDE78FAA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,17 +121,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0BCF2319C56F263B1011F5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4706FDEDAB0FEA4A55DB69DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9ABAAB9C6E44050EDE78FAA /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6F8FB9E41C0B1DC500812CFC = {
 			isa = PBXGroup;
 			children = (
 				6F8FB9EF1C0B1DC500812CFC /* BaisiBudejie */,
 				6F8FB9EE1C0B1DC500812CFC /* Products */,
+				BB724F72358AD3E3AC6C7805 /* Pods */,
+				4706FDEDAB0FEA4A55DB69DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,7 +167,6 @@
 			children = (
 				6FCC360E1C0C87B2000ECB8E /* Classes */,
 				6FCC35FD1C0C839C000ECB8E /* Resources */,
-				6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -197,6 +223,8 @@
 		6FBF61231C11BC96009A62F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F20C56B1C133EA100A78255 /* XYRecommendTag.h */,
+				6F20C56C1C133EA100A78255 /* XYRecommendTag.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +232,9 @@
 		6FBF61241C11BC96009A62F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6F20C5741C1352F300A78255 /* XYRecommendTagCell.h */,
+				6F20C5751C1352F300A78255 /* XYRecommendTagCell.m */,
+				6F20C5761C1352F300A78255 /* XYRecommendTagCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,6 +493,8 @@
 				6FCC36301C0C87B2000ECB8E /* AppDelegate.m */,
 				6FCC36311C0C87B2000ECB8E /* BaisiBudejie.pch */,
 				6FCC36391C0C87B2000ECB8E /* main.m */,
+				6F20C5681C133B4300A78255 /* XYHTTPSessionManager.h */,
+				6F20C5691C133B4300A78255 /* XYHTTPSessionManager.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -469,6 +502,8 @@
 		6FCC36321C0C87B2000ECB8E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6F20C5711C133F7A00A78255 /* NSDictionary+PropertyCode.h */,
+				6F20C5721C133F7A00A78255 /* NSDictionary+PropertyCode.m */,
 				6FCC36331C0C87B2000ECB8E /* UIColor+RandomColor.h */,
 				6FCC36341C0C87B2000ECB8E /* UIColor+RandomColor.m */,
 				6FCC36351C0C87B2000ECB8E /* UIImage+Image.h */,
@@ -485,6 +520,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		BB724F72358AD3E3AC6C7805 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4D71F382C3283D7D5151A6C /* Pods.debug.xcconfig */,
+				0698BBDB3B25046F4C734828 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -492,9 +536,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F8FBA041C0B1DC500812CFC /* Build configuration list for PBXNativeTarget "BaisiBudejie" */;
 			buildPhases = (
+				CCAB37A204AE84D5CDC3FF5D /* Check Pods Manifest.lock */,
 				6F8FB9E91C0B1DC500812CFC /* Sources */,
 				6F8FB9EA1C0B1DC500812CFC /* Frameworks */,
 				6F8FB9EB1C0B1DC500812CFC /* Resources */,
+				676BF8EB8AB54DB52D43D4E2 /* Embed Pods Frameworks */,
+				F854E13E75AC7A7779ED86AA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -548,8 +595,8 @@
 				6FCC360A1C0C839C000ECB8E /* LaunchImage@2x.png in Resources */,
 				6FCC36061C0C839C000ECB8E /* LaunchImage-568h@2x.png in Resources */,
 				6FCC36091C0C839C000ECB8E /* LaunchImage.png in Resources */,
+				6F20C5781C1352F300A78255 /* XYRecommendTagCell.xib in Resources */,
 				6F47866C1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib in Resources */,
-				6F8FBA001C0B1DC500812CFC /* LaunchScreen.storyboard in Resources */,
 				6FCC363B1C0C87B2000ECB8E /* XYAdViewController.xib in Resources */,
 				6FCC36081C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				6FCC360B1C0C839C000ECB8E /* Assets.xcassets in Resources */,
@@ -558,6 +605,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		676BF8EB8AB54DB52D43D4E2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCAB37A204AE84D5CDC3FF5D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F854E13E75AC7A7779ED86AA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F8FB9E91C0B1DC500812CFC /* Sources */ = {
@@ -568,14 +663,18 @@
 				6FB080641C11E89100A9F46C /* XYLoginRegisterTextField.m in Sources */,
 				6FCC364E1C0C8AA7000ECB8E /* XYMeViewController.m in Sources */,
 				6FCC363E1C0C87B2000ECB8E /* AppDelegate.m in Sources */,
+				6F20C56A1C133B4300A78255 /* XYHTTPSessionManager.m in Sources */,
 				6FCC364B1C0C8A63000ECB8E /* XYFollowViewController.m in Sources */,
+				6F20C5771C1352F300A78255 /* XYRecommendTagCell.m in Sources */,
 				6FB080611C11E1AE00A9F46C /* XYQuickLoginButton.m in Sources */,
 				6FCC363F1C0C87B2000ECB8E /* UIColor+RandomColor.m in Sources */,
 				6FBF61251C11BC96009A62F5 /* XYRecommendTagViewController.m in Sources */,
 				6FCC363C1C0C87B2000ECB8E /* XYTabBarController.m in Sources */,
+				6F20C56D1C133EA100A78255 /* XYRecommendTag.m in Sources */,
 				6FCC36481C0C8A03000ECB8E /* XYNewViewController.m in Sources */,
 				6F2319DE1C13111700E59895 /* UITextField+XYExtension.m in Sources */,
 				6F47866B1C11D4A800E3EAB1 /* XYLoginRegisterViewController.m in Sources */,
+				6F20C5731C133F7A00A78255 /* NSDictionary+PropertyCode.m in Sources */,
 				6FCC36411C0C87B2000ECB8E /* UIView+Frame.m in Sources */,
 				6F2319DB1C130E3700E59895 /* NSObject+XYExtension.m in Sources */,
 				6FBF61111C11BA81009A62F5 /* XYSettingViewController.m in Sources */,
@@ -590,17 +689,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		6F8FB9FE1C0B1DC500812CFC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6F8FB9FF1C0B1DC500812CFC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6F8FBA021C0B1DC500812CFC /* Debug */ = {
@@ -685,13 +773,14 @@
 		};
 		6F8FBA051C0B1DC500812CFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4D71F382C3283D7D5151A6C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaisiBudejie/Classes/Other-其他/BaisiBudejie.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BaisiBudejie/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = backy.BaisiBudejie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -700,13 +789,14 @@
 		};
 		6F8FBA061C0B1DC500812CFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0698BBDB3B25046F4C734828 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaisiBudejie/Classes/Other-其他/BaisiBudejie.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/BaisiBudejie/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = backy.BaisiBudejie;
 				PRODUCT_NAME = "$(TARGET_NAME)";

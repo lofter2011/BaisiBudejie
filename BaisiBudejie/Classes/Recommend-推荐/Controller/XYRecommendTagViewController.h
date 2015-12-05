@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XYRecommendTagViewController : UIViewController
+@interface XYRecommendTagViewController : UITableViewController
 
 @end
