@@ -9,6 +9,7 @@
 #import "XYLoginRegisterViewController.h"
 
 @interface XYLoginRegisterViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftMargin;
 
 @end
 
@@ -41,6 +42,26 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)showLoginOrRegister:(UIButton *)button {
+    
+    // 按钮文字依靠切换状态来改变
+    button.selected = !button.isSelected;
+    
+    // 退出编辑
+    [self.view endEditing:YES];
+    
+    // 修改约束值
+    self.leftMargin.constant = self.leftMargin.constant ? 0 : -screenW;
+
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.25 animations:^{
+        // 执行layoutIfNeeded来做约束动画
+        [weakSelf.view layoutIfNeeded];
+    }];
+    
+}
+
 
 
 @end

@@ -15,6 +15,7 @@
 
 @implementation XYLoginRegisterTextField
 
+#pragma mark - 初始化方法
 - (void)awakeFromNib
 {
     [self setUpAttribute];
@@ -46,7 +47,22 @@
     // 设置光标颜色
     self.tintColor = self.textColor;
     
-    // 设置占位文字颜色
-    self.xy_placeholderColor = [UIColor yellowColor];
 }
+
+#pragma mark - 内部特性
+
+- (BOOL)becomeFirstResponder
+{
+    self.xy_placeholderColor = self.textColor;
+    
+    return [super becomeFirstResponder];
+}
+
+- (BOOL)resignFirstResponder
+{
+    self.xy_placeholderColor = nil;
+    
+    return [super resignFirstResponder];
+}
+
 @end
