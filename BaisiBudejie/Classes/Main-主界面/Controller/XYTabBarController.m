@@ -10,8 +10,6 @@
 #import "XYTabBar.h"
 #import "XYNavigationController.h"
 
-#import "UIImage+Image.h"
-
 #import "XYEssenceViewController.h"
 #import "XYNewViewController.h"
 #import "XYFollowViewController.h"

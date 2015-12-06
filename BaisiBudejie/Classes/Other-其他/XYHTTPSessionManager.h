@@ -10,4 +10,6 @@
 
 @interface XYHTTPSessionManager : AFHTTPSessionManager
 
+- (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration;
+
 @end

@@ -36,7 +36,7 @@
 		6FCC363D1C0C87B2000ECB8E /* XYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36251C0C87B2000ECB8E /* XYTabBar.m */; };
 		6FCC363E1C0C87B2000ECB8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36301C0C87B2000ECB8E /* AppDelegate.m */; };
 		6FCC363F1C0C87B2000ECB8E /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36341C0C87B2000ECB8E /* UIColor+RandomColor.m */; };
-		6FCC36401C0C87B2000ECB8E /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36361C0C87B2000ECB8E /* UIImage+Image.m */; };
+		6FCC36401C0C87B2000ECB8E /* UIImage+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36361C0C87B2000ECB8E /* UIImage+XYExtension.m */; };
 		6FCC36411C0C87B2000ECB8E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36381C0C87B2000ECB8E /* UIView+Frame.m */; };
 		6FCC36421C0C87B2000ECB8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36391C0C87B2000ECB8E /* main.m */; };
 		6FCC36451C0C87E8000ECB8E /* XYEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC36441C0C87E8000ECB8E /* XYEssenceViewController.m */; };
@@ -99,8 +99,8 @@
 		6FCC36311C0C87B2000ECB8E /* BaisiBudejie.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaisiBudejie.pch; sourceTree = "<group>"; };
 		6FCC36331C0C87B2000ECB8E /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 		6FCC36341C0C87B2000ECB8E /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
-		6FCC36351C0C87B2000ECB8E /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
-		6FCC36361C0C87B2000ECB8E /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		6FCC36351C0C87B2000ECB8E /* UIImage+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XYExtension.h"; sourceTree = "<group>"; };
+		6FCC36361C0C87B2000ECB8E /* UIImage+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XYExtension.m"; sourceTree = "<group>"; };
 		6FCC36371C0C87B2000ECB8E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		6FCC36381C0C87B2000ECB8E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		6FCC36391C0C87B2000ECB8E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -506,8 +506,8 @@
 				6F20C5721C133F7A00A78255 /* NSDictionary+PropertyCode.m */,
 				6FCC36331C0C87B2000ECB8E /* UIColor+RandomColor.h */,
 				6FCC36341C0C87B2000ECB8E /* UIColor+RandomColor.m */,
-				6FCC36351C0C87B2000ECB8E /* UIImage+Image.h */,
-				6FCC36361C0C87B2000ECB8E /* UIImage+Image.m */,
+				6FCC36351C0C87B2000ECB8E /* UIImage+XYExtension.h */,
+				6FCC36361C0C87B2000ECB8E /* UIImage+XYExtension.m */,
 				6FCC36371C0C87B2000ECB8E /* UIView+Frame.h */,
 				6FCC36381C0C87B2000ECB8E /* UIView+Frame.m */,
 				6FBF610C1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.h */,
@@ -678,7 +678,7 @@
 				6FCC36411C0C87B2000ECB8E /* UIView+Frame.m in Sources */,
 				6F2319DB1C130E3700E59895 /* NSObject+XYExtension.m in Sources */,
 				6FBF61111C11BA81009A62F5 /* XYSettingViewController.m in Sources */,
-				6FCC36401C0C87B2000ECB8E /* UIImage+Image.m in Sources */,
+				6FCC36401C0C87B2000ECB8E /* UIImage+XYExtension.m in Sources */,
 				6FBF61281C11BCA5009A62F5 /* XYRecommendFollowViewController.m in Sources */,
 				6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */,
 				6FCC363A1C0C87B2000ECB8E /* XYAdViewController.m in Sources */,

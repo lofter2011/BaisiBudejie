@@ -9,8 +9,10 @@
 #import "XYRecommendTagViewController.h"
 #import "XYHTTPSessionManager.h"
 #import <MJExtension.h>
+#import <SVProgressHUD.h>
 #import "XYRecommendTag.h"
 #import "XYRecommendTagCell.h"
+
 
 static NSString * const XYRecommendTagCellId = @"tag";
 
@@ -28,40 +30,66 @@ static NSString * const XYRecommendTagCellId = @"tag";
     [super viewDidLoad];
 
     self.navigationItem.title = @"推荐标签";
-    self.view.backgroundColor = XYCommonBgColor;
     
     [self setUpTable];
     
     [self loadRecommendTags];
 }
 
-- (void)setUpTable
+- (void)viewWillDisappear:(BOOL)animated
 {
-    // 注册cell
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XYRecommendTagCell class]) bundle:nil] forCellReuseIdentifier:XYRecommendTagCellId];
-    self.tableView.rowHeight = 70;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [SVProgressHUD dismiss];
+    
+    [self.manager invalidateSessionCancelingTasks:YES];
 }
 
+/**
+ *  初始化table
+ */
+- (void)setUpTable
+{
+    self.tableView.backgroundColor = XYCommonBgColor;
+    self.tableView.rowHeight = 70;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XYRecommendTagCell class]) bundle:nil] forCellReuseIdentifier:XYRecommendTagCellId];
+}
+
+#pragma mark - 数据处理
+/**
+ *  加载推荐标签数据
+ */
 - (void)loadRecommendTags
 {
+    // 显示蒙版
+    [SVProgressHUD showWithStatus:@"正在加载推荐标签数据"];
+    
+    // 请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"tag_recommend";
     params[@"action"] = @"sub";
     params[@"c"] = @"topic";
     
+    // 弱引用
     __weak typeof(self) weakSelf = self;
 
+    // 发送GET请求
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, NSArray * _Nonnull responseObject) {
-        NSLog(@"请求成功");
         
         // 字典数组 -> 模型数组
         weakSelf.recommendTags = [XYRecommendTag mj_objectArrayWithKeyValuesArray:responseObject];
-        NSLog(@"%@", weakSelf.recommendTags);
-        [weakSelf.tableView reloadData];
 
+        // 刷新表格
+        [weakSelf.tableView reloadData];
+        
+        // 隐藏蒙版
+        [SVProgressHUD dismiss];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"请求失败");
+        // 取消任务不执行任何操作
+        if (error.code == NSURLErrorCancelled) return ;
+
+        // 提示错误信息
+        [SVProgressHUD showErrorWithStatus:@"网络繁忙, 请稍后再试!"];
     }];
 }
 
@@ -77,7 +105,6 @@ static NSString * const XYRecommendTagCellId = @"tag";
 #pragma mark - 数据源
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%zd", self.recommendTags.count);
     return self.recommendTags.count;
 }
 

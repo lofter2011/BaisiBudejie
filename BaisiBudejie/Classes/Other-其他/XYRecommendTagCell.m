@@ -23,6 +23,9 @@
 
 }
 
+/**
+ *  拦截所有frame, 设置一个间隔
+ */
 - (void)setFrame:(CGRect)frame
 {
     frame.size.height--;
@@ -33,13 +36,22 @@
 {
     _recommendTag = recommendTag;
     
+    // 设置图片(圆形图片)
     UIImage *placeholder = [UIImage imageNamed:@"defaultUserIcon"];
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-       // 剪裁圆角图片
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:recommendTag.image_list] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (!image) return;
+        // 将图片处理成圆形
+        self.imageView.image = [image circleImage];
     }];
     
     self.themeNameLabel.text = recommendTag.theme_name;
-    self.subNumberLabel.text = [NSString stringWithFormat:@"%zd人订阅", recommendTag.sub_number];
+
+    if (recommendTag.sub_number > 10000) {
+        self.subNumberLabel.text = [NSString stringWithFormat:@"%.1f万人订阅", recommendTag.sub_number / 10000.0];
+    } else {
+        self.subNumberLabel.text = [NSString stringWithFormat:@"%zd人订阅", recommendTag.sub_number];
+    }
+    
 }
 
 @end

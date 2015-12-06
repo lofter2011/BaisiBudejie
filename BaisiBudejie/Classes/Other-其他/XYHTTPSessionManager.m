@@ -10,4 +10,11 @@
 
 @implementation XYHTTPSessionManager
 
+- (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration
+{
+    if (self = [super initWithBaseURL:url sessionConfiguration:configuration]) {
+        // 在这里可以进行一些统一配置
+    }
+    return self;
+}
 @end

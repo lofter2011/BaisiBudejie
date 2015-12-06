@@ -17,6 +17,6 @@
 @property (nonatomic ,strong) NSString *theme_name;
 
 /** 订阅数 */
-@property (nonatomic ,strong) NSString *sub_number;
+@property (nonatomic ,assign) NSInteger sub_number;
 
 @end

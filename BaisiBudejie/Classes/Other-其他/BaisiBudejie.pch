@@ -14,6 +14,7 @@
 /** 常用头文件 */
 #import "UIView+Frame.h"
 #import "UIBarButtonItem+XYExtension.h"
+#import "UIImage+XYExtension.h"
 #import "NSObject+XYExtension.h"
 
 // 输出日志

@@ -10,8 +10,4 @@
 
 @implementation XYRecommendTag
 
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@, %@, %@", self.image_list, self.theme_name, self.sub_number];
-}
 @end

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (Image)
+@interface UIImage (XYExtension)
 
 /** 返回一张未经渲染的原始图片 */
 + (UIImage *)imageWithOriginalImageName:(NSString *)imageName;
 
-/** 从URL地址获取图片 */
-+ (UIImage *)imageWithUrlPath:(NSString *)urlPath;
+/** 获得一张圆形图片 */
+- (instancetype)circleImage;
++ (instancetype)circleImageNamed:(NSString *)name;
 @end
