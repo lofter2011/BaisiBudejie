@@ -37,7 +37,7 @@
     _recommendTag = recommendTag;
     
     // 设置图片(圆形图片)
-    UIImage *placeholder = [UIImage imageNamed:@"defaultUserIcon"];
+    UIImage *placeholder = [UIImage circleImageNamed:@"defaultUserIcon"];
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:recommendTag.image_list] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (!image) return;
         // 将图片处理成圆形
