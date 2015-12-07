@@ -12,17 +12,17 @@
 /** size的get/set方法声明 */
 @property (nonatomic, assign) CGSize xy_size;
 
-/** 中心点X的get/set方法声明 */
+/** 中心点X */
 @property (nonatomic, assign) CGFloat xy_centerX;
-/** 中心点Y的get/set方法声明 */
+/** 中心点Y */
 @property (nonatomic, assign) CGFloat xy_centerY;
 
-/** X的get/set方法声明 */
+/** Frame的X点 */
 @property (nonatomic, assign) CGFloat xy_x;
-/** Y的get/set方法声明 */
+/** Frame的Y点 */
 @property (nonatomic, assign) CGFloat xy_y;
-/** Widhth的get/set方法声明 */
+/** Width */
 @property (nonatomic, assign) CGFloat xy_width;
-/** Height的get/set方法声明 */
+/** Height */
 @property (nonatomic, assign) CGFloat xy_height;
 @end

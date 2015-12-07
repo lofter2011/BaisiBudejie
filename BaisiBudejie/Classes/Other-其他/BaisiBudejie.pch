@@ -15,7 +15,9 @@
 #import "UIView+Frame.h"
 #import "UIBarButtonItem+XYExtension.h"
 #import "UIImage+XYExtension.h"
+#import "UIColor+RandomColor.h"
 #import "NSObject+XYExtension.h"
+#import "XYConst.h"
 
 // 输出日志
 #ifdef DEBUG
