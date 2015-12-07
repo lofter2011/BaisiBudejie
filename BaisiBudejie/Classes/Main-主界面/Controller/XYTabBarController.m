@@ -88,7 +88,7 @@
     childVc.tabBarItem.title = title;
     // imageNamed:如果参数为nil或空串的话, 会报警告. length>0会排除这两种情况, 消除警告
     if (imageName.length) childVc.tabBarItem.image = [UIImage imageNamed:imageName];
-    if (selectedImageName.length) childVc.tabBarItem.selectedImage = [UIImage imageWithOriginalImageName:selectedImageName];
+    if (selectedImageName.length) childVc.tabBarItem.selectedImage = [UIImage xy_imageWithOriginalImageName:selectedImageName];
 
     [self addChildViewController:childVc];
 }

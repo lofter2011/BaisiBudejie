@@ -11,8 +11,8 @@
 @interface NSObject (XYExtension)
 
 /** 查看一个对象所属类中定义的成员变量 */
-- (void)checkClass;
+- (void)xy_checkClass;
 
 /** 查看一个类中定义的成员变量 */
-+ (void)checkClass;
++ (void)xy_checkClass;
 @end

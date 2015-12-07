@@ -12,13 +12,13 @@
 @implementation NSObject (XYExtension)
 
 // 查看一个对象所属类中的成员变量
-- (void)checkClass
+- (void)xy_checkClass
 {
-    [[self class] checkClass];
+    [[self class] xy_checkClass];
 }
 
 // 查看一个类中的成员变量
-+ (void)checkClass
++ (void)xy_checkClass
 {
     unsigned int count = 0;
     Ivar *ivarList = class_copyIvarList([self class], &count);

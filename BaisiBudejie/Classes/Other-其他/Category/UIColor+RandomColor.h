@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (RandomColor)
-+ (UIColor *)colorRandom;
++ (UIColor *)xy_colorRandom;
 @end

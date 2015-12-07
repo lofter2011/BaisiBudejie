@@ -79,7 +79,7 @@ static NSString * const XYMeCellId = @"me";
  */
 - (void)settingClick
 {
-    XYSettingViewController *settingVc = [[XYSettingViewController alloc] init];
+    XYSettingViewController *settingVc = [[XYSettingViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
     [self.navigationController pushViewController:settingVc animated:YES];
 }
@@ -99,6 +99,7 @@ static NSString * const XYMeCellId = @"me";
         cell.imageView.image = [UIImage imageNamed:@"setup-head-default"];
     } else if (indexPath.row == 1) {
         cell.textLabel.text = @"离线下载";
+        // 清空掉自己没有的属性防止循环利用
         cell.imageView.image = nil;
     }
     

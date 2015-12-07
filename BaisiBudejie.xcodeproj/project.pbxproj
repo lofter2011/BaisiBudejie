@@ -22,6 +22,7 @@
 		6F47866C1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F47866A1C11D4A800E3EAB1 /* XYLoginRegisterViewController.xib */; };
 		6F7C36401C156EB20006EF76 /* XYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7C363F1C156EB20006EF76 /* XYWebViewController.m */; };
 		6F7C36421C156EC20006EF76 /* XYWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F7C36411C156EC20006EF76 /* XYWebViewController.xib */; };
+		6F8BD0C91C15B4D700D48A72 /* NSString+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8BD0C81C15B4D700D48A72 /* NSString+XYExtension.m */; };
 		6FB080611C11E1AE00A9F46C /* XYQuickLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB080601C11E1AE00A9F46C /* XYQuickLoginButton.m */; };
 		6FB080641C11E89100A9F46C /* XYLoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB080631C11E89100A9F46C /* XYLoginRegisterTextField.m */; };
 		6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF610D1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m */; };
@@ -81,6 +82,8 @@
 		6F7C363E1C156EB20006EF76 /* XYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWebViewController.h; sourceTree = "<group>"; };
 		6F7C363F1C156EB20006EF76 /* XYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWebViewController.m; sourceTree = "<group>"; };
 		6F7C36411C156EC20006EF76 /* XYWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYWebViewController.xib; sourceTree = "<group>"; };
+		6F8BD0C71C15B4D700D48A72 /* NSString+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XYExtension.h"; sourceTree = "<group>"; };
+		6F8BD0C81C15B4D700D48A72 /* NSString+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XYExtension.m"; sourceTree = "<group>"; };
 		6F8FB9ED1C0B1DC500812CFC /* BaisiBudejie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaisiBudejie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB0805F1C11E1AE00A9F46C /* XYQuickLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYQuickLoginButton.h; sourceTree = "<group>"; };
 		6FB080601C11E1AE00A9F46C /* XYQuickLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYQuickLoginButton.m; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 				6F2319DA1C130E3700E59895 /* NSObject+XYExtension.m */,
 				6F2319DC1C13111700E59895 /* UITextField+XYExtension.h */,
 				6F2319DD1C13111700E59895 /* UITextField+XYExtension.m */,
+				6F8BD0C71C15B4D700D48A72 /* NSString+XYExtension.h */,
+				6F8BD0C81C15B4D700D48A72 /* NSString+XYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 				6FBF61281C11BCA5009A62F5 /* XYRecommendFollowViewController.m in Sources */,
 				6F002F6A1C14952200BDC29F /* XYSquareButton.m in Sources */,
 				6FBF610E1C11B50D009A62F5 /* UIBarButtonItem+XYExtension.m in Sources */,
+				6F8BD0C91C15B4D700D48A72 /* NSString+XYExtension.m in Sources */,
 				6FD79BFA1C147E7E00021BF2 /* XYSquare.m in Sources */,
 				6FCC363A1C0C87B2000ECB8E /* XYAdViewController.m in Sources */,
 				6FBF612B1C11BEBA009A62F5 /* XYNavigationController.m in Sources */,

@@ -11,9 +11,9 @@
 @interface UIImage (XYExtension)
 
 /** 返回一张未经渲染的原始图片 */
-+ (UIImage *)imageWithOriginalImageName:(NSString *)imageName;
++ (UIImage *)xy_imageWithOriginalImageName:(NSString *)imageName;
 
 /** 获得一张圆形图片 */
-- (instancetype)circleImage;
-+ (instancetype)circleImageNamed:(NSString *)name;
+- (instancetype)xy_circleImage;
++ (instancetype)xy_circleImageNamed:(NSString *)name;
 @end

@@ -13,7 +13,7 @@
 /**
  *  返回一张未经渲染的图片
  */
-+ (UIImage *)imageWithOriginalImageName:(NSString *)imageName
++ (UIImage *)xy_imageWithOriginalImageName:(NSString *)imageName
 {
     UIImage *image = [UIImage imageNamed:imageName];
     return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -22,7 +22,7 @@
 /**
  *  获得一张圆形图片
  */
-- (instancetype)circleImage
+- (instancetype)xy_circleImage
 {
     // 开启图形上下文
     UIGraphicsBeginImageContext(self.size);
@@ -43,9 +43,9 @@
     return circleImage;
 }
 
-+ (instancetype)circleImageNamed:(NSString *)name
++ (instancetype)xy_circleImageNamed:(NSString *)name
 {
-    return [[UIImage imageNamed:name] circleImage];
+    return [[UIImage imageNamed:name] xy_circleImage];
 }
 
 @end

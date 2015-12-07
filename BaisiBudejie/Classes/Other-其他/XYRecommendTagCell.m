@@ -37,11 +37,11 @@
     _recommendTag = recommendTag;
     
     // 设置图片(圆形图片)
-    UIImage *placeholder = [UIImage circleImageNamed:@"defaultUserIcon"];
+    UIImage *placeholder = [UIImage xy_circleImageNamed:@"defaultUserIcon"];
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:recommendTag.image_list] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (!image) return;
         // 将图片处理成圆形
-        self.imageView.image = [image circleImage];
+        self.imageView.image = [image xy_circleImage];
     }];
     
     self.themeNameLabel.text = recommendTag.theme_name;

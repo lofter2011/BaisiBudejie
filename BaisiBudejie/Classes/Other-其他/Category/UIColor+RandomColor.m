@@ -9,7 +9,7 @@
 #import "UIColor+RandomColor.h"
 
 @implementation UIColor (RandomColor)
-+ (UIColor *)colorRandom
++ (UIColor *)xy_colorRandom
 {
     CGFloat r = arc4random_uniform(256) / 255.0;
     CGFloat g = arc4random_uniform(256) / 255.0;
