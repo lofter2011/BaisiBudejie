@@ -10,7 +10,6 @@
 #import "XYHTTPSessionManager.h"
 #import "NSDictionary+PropertyCode.h"
 #import <MJExtension.h>
-#import <SafariServices/SafariServices.h>
 #import "XYSquare.h"
 #import "XYSquareButton.h"
 #import "XYWebViewController.h"
@@ -106,18 +105,18 @@
  */
 - (void)buttonClick:(XYSquareButton *)squareButton
 {
-
     NSString *url = squareButton.square.url;
 
-    if ([url hasPrefix:@"http"]) { // 如果是http/https网页, 用webView展示
+    if ([url hasPrefix:@"http"]) {
+        // 如果是http/https网页, 用webView展示
         UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         UINavigationController *nav = tab.selectedViewController;
-//        SFSafariViewController *safariVc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
-//        safariVc.navigationController.navigationItem.title = squareButton.square.name;
-//        [nav presentViewController:safariVc animated:YES completion:nil];
+
+        // 需要显示进度条用SFSafariViewController, 需要导航栏内容用自定义web控制器
         XYWebViewController *webVc = [[XYWebViewController alloc] init];
         webVc.urlPath = url;
         webVc.navigationItem.title = squareButton.square.name;
+        
         [nav pushViewController:webVc animated:YES];
         
     } else if([url hasPrefix:@"mod"]) {
@@ -128,6 +127,5 @@
     } else { // 其他
         XY_Log(@"未知");
     }
-        
 }
 @end
