@@ -34,7 +34,7 @@
         // 子线程中计算缓存大小
         XYWeakSelf
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//            [NSThread sleepForTimeInterval:3]; // 模拟延迟
+            [NSThread sleepForTimeInterval:7]; // 模拟延迟
             
             // 获取文件大小信息
             NSString *cachesFileSizeText = [self getCachesFileSizeText];
@@ -51,6 +51,20 @@
         });
     }
     return self;
+}
+
+/**
+ *  布局子控件，cell会在添加到窗口显示之前调用这个方法
+ */
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)self.accessoryView;
+    
+    // 菊花移出窗口后动画就停止了
+    [activityView startAnimating];
+    
 }
 
 #pragma mark - 缓存相关操作
