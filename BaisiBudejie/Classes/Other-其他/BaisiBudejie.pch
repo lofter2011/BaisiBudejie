@@ -30,6 +30,8 @@
 // 获取应用主窗口
 #define appKeyWidow [UIApplication sharedApplication].keyWindow
 
+// block中弱引用self
+#define XYWeakSelf __weak typeof(self) weakSelf = self;
 
 // RGB颜色
 #define XYColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
