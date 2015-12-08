@@ -23,8 +23,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     // 2.设置窗口根控制器
-//    self.window.rootViewController = [[XYTabBarController alloc] init];
-    self.window.rootViewController = [[XYAdViewController alloc] init];
+    self.window.rootViewController = [[XYTabBarController alloc] init];
+//    self.window.rootViewController = [[XYAdViewController alloc] init];
     
     // 3.显示窗口
     [self.window makeKeyAndVisible];
