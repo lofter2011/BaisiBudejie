@@ -143,17 +143,19 @@
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:scrollView];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     // scrollView中添加所有子控制器的view
     [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UITableViewController * _Nonnull childVc, NSUInteger idx, BOOL * _Nonnull stop) {
 
         childVc.view.frame = CGRectMake(idx * scrollView.xy_width, 0, scrollView.xy_width, scrollView.xy_height);
 
-scrollView.contentInset = UIEdgeInsetsMake(XYNavMaxY+XYTitlesViewH, 0, XYTabBarH, 0);
+        // tableView设置内边距，防止导航栏和TabBar挡住内容
+        childVc.tableView.contentInset = UIEdgeInsetsMake(XYNavMaxY + XYTitlesViewH, 0, XYTabBarH, 0);
+        // 防止导航栏和TabBar挡住滚动条
         childVc.tableView.scrollIndicatorInsets = childVc.tableView.contentInset;
         [scrollView addSubview:childVc.view];
     }];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(self.childViewControllers.count * scrollView.xy_width, 0);
 }
