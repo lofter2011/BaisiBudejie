@@ -6,5 +6,8 @@ UIKIT_EXTERN CGFloat XYCommonMargin;
 /** 导航栏最大Y值 */
 UIKIT_EXTERN CGFloat XYNavMaxY;
 
+/** UITabBar的高度 */
+UIKIT_EXTERN CGFloat XYTabBarH;
+
 /** 标题栏高度的高度 */
 UIKIT_EXTERN CGFloat XYTitlesViewH;

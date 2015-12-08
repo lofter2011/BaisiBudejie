@@ -10,6 +10,12 @@
 #import "XYRecommendTagViewController.h"
 #import "XYTitleButton.h"
 
+#import "XYAllViewController.h"
+#import "XYVideoViewController.h"
+#import "XYAudioViewController.h"
+#import "XYPictureViewController.h"
+#import "XYWordViewController.h"
+
 @interface XYEssenceViewController ()
 /** 标题栏 */
 @property (nonatomic, weak) UIView *titlesView;
@@ -29,11 +35,14 @@
     // 初始化导航栏
     [self setUpNav];
     
+    // 添加所有子控制器
+    [self setUpAllChildViewControllers];
+    
+    // 初始化内容view
+    [self setUpContentView];
+    
     // 初始化标题栏
     [self setUpTitleView];
-    
-    // 初始化内容栏
-    [self setUpContentView];
 }
 
 // 初始化导航栏
@@ -113,12 +122,40 @@
     underlineView.xy_centerX = firstTitleButton.xy_centerX;
 }
 
+/**
+ *  添加所有内容子控制器
+ */
+- (void)setUpAllChildViewControllers
+{
+    [self addChildViewController:[[XYAllViewController alloc] init]];
+    [self addChildViewController:[[XYVideoViewController alloc] init]];
+    [self addChildViewController:[[XYAudioViewController alloc] init]];
+    [self addChildViewController:[[XYPictureViewController alloc] init]];
+    [self addChildViewController:[[XYWordViewController alloc] init]];
+}
+
+/**
+ *  初始化内容view
+ */
 - (void)setUpContentView
 {
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
-    scrollView.backgroundColor = [UIColor orangeColor];
+    scrollView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:scrollView];
+    
+    // scrollView中添加所有子控制器的view
+    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UITableViewController * _Nonnull childVc, NSUInteger idx, BOOL * _Nonnull stop) {
+
+        childVc.view.frame = CGRectMake(idx * scrollView.xy_width, 0, scrollView.xy_width, scrollView.xy_height);
+
+scrollView.contentInset = UIEdgeInsetsMake(XYNavMaxY+XYTitlesViewH, 0, XYTabBarH, 0);
+        childVc.tableView.scrollIndicatorInsets = childVc.tableView.contentInset;
+        [scrollView addSubview:childVc.view];
+    }];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    scrollView.pagingEnabled = YES;
+    scrollView.contentSize = CGSizeMake(self.childViewControllers.count * scrollView.xy_width, 0);
 }
 
 #pragma mark - 监听
