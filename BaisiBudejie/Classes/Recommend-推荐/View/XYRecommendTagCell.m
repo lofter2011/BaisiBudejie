@@ -8,7 +8,6 @@
 
 #import "XYRecommendTagCell.h"
 #import "XYRecommendTag.h"
-#import <UIImageView+WebCache.h>
 
 @interface XYRecommendTagCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageListView;
@@ -37,12 +36,7 @@
     _recommendTag = recommendTag;
     
     // 设置图片(圆形图片)
-    UIImage *placeholder = [UIImage xy_circleImageNamed:@"defaultUserIcon"];
-    [self.imageListView sd_setImageWithURL:[NSURL URLWithString:recommendTag.image_list] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (!image) return;
-        // 将图片处理成圆形
-        self.imageListView.image = [image xy_circleImage];
-    }];
+    [self.imageListView xy_setHeader:recommendTag.image_list placeholderImageName:@"defaultUserIcon"];
     
     self.themeNameLabel.text = recommendTag.theme_name;
 

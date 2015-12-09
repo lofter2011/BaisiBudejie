@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F138B781C1884FA00A6CCA1 /* UIImageView+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F138B771C1884FA00A6CCA1 /* UIImageView+XYExtension.m */; };
 		6F16B8381C16F796008EBBE1 /* XYAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F16B7D41C16F796008EBBE1 /* XYAdViewController.m */; };
 		6F16B8391C16F796008EBBE1 /* XYAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F16B7D51C16F796008EBBE1 /* XYAdViewController.xib */; };
 		6F16B83A1C16F796008EBBE1 /* XYEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F16B7DB1C16F796008EBBE1 /* XYEssenceViewController.m */; };
@@ -55,6 +56,9 @@
 		6F16B89B1C174474008EBBE1 /* XYAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F16B89A1C174474008EBBE1 /* XYAudioViewController.m */; };
 		6F16B89E1C174480008EBBE1 /* XYPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F16B89D1C174480008EBBE1 /* XYPictureViewController.m */; };
 		6F16B8A11C174492008EBBE1 /* XYWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F16B8A01C174492008EBBE1 /* XYWordViewController.m */; };
+		6F2AB9A21C1867F50060123A /* XYTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2AB9A01C1867F50060123A /* XYTopicCell.m */; };
+		6F2AB9A31C1867F50060123A /* XYTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F2AB9A11C1867F50060123A /* XYTopicCell.xib */; };
+		6F2AB9A61C187D1A0060123A /* XYTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2AB9A51C187D1A0060123A /* XYTopic.m */; };
 		6FCC36061C0C839C000ECB8E /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC35FF1C0C839C000ECB8E /* LaunchImage-568h@2x.png */; };
 		6FCC36071C0C839C000ECB8E /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36001C0C839C000ECB8E /* LaunchImage-800-667h@2x.png */; };
 		6FCC36081C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36011C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png */; };
@@ -66,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		0698BBDB3B25046F4C734828 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6F138B761C1884FA00A6CCA1 /* UIImageView+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XYExtension.h"; sourceTree = "<group>"; };
+		6F138B771C1884FA00A6CCA1 /* UIImageView+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XYExtension.m"; sourceTree = "<group>"; };
 		6F16B7D31C16F796008EBBE1 /* XYAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAdViewController.h; sourceTree = "<group>"; };
 		6F16B7D41C16F796008EBBE1 /* XYAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAdViewController.m; sourceTree = "<group>"; };
 		6F16B7D51C16F796008EBBE1 /* XYAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYAdViewController.xib; sourceTree = "<group>"; };
@@ -156,6 +162,11 @@
 		6F16B89D1C174480008EBBE1 /* XYPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPictureViewController.m; sourceTree = "<group>"; };
 		6F16B89F1C174491008EBBE1 /* XYWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWordViewController.h; sourceTree = "<group>"; };
 		6F16B8A01C174492008EBBE1 /* XYWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWordViewController.m; sourceTree = "<group>"; };
+		6F2AB99F1C1867F50060123A /* XYTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYTopicCell.h; sourceTree = "<group>"; };
+		6F2AB9A01C1867F50060123A /* XYTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYTopicCell.m; sourceTree = "<group>"; };
+		6F2AB9A11C1867F50060123A /* XYTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYTopicCell.xib; sourceTree = "<group>"; };
+		6F2AB9A41C187D1A0060123A /* XYTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYTopic.h; sourceTree = "<group>"; };
+		6F2AB9A51C187D1A0060123A /* XYTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYTopic.m; sourceTree = "<group>"; };
 		6F8FB9ED1C0B1DC500812CFC /* BaisiBudejie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaisiBudejie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FCC35FF1C0C839C000ECB8E /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
 		6FCC36001C0C839C000ECB8E /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
@@ -269,6 +280,8 @@
 		6F16B7DC1C16F796008EBBE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F2AB9A41C187D1A0060123A /* XYTopic.h */,
+				6F2AB9A51C187D1A0060123A /* XYTopic.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +291,9 @@
 			children = (
 				6F16B8901C172E79008EBBE1 /* XYTitleButton.h */,
 				6F16B8911C172E79008EBBE1 /* XYTitleButton.m */,
+				6F2AB99F1C1867F50060123A /* XYTopicCell.h */,
+				6F2AB9A01C1867F50060123A /* XYTopicCell.m */,
+				6F2AB9A11C1867F50060123A /* XYTopicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -467,6 +483,8 @@
 				6F16B8161C16F796008EBBE1 /* UITextField+XYExtension.m */,
 				6F16B8171C16F796008EBBE1 /* UIView+Frame.h */,
 				6F16B8181C16F796008EBBE1 /* UIView+Frame.m */,
+				6F138B761C1884FA00A6CCA1 /* UIImageView+XYExtension.h */,
+				6F138B771C1884FA00A6CCA1 /* UIImageView+XYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -687,6 +705,7 @@
 				6FCC36081C0C839C000ECB8E /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				6F16B86C1C17177E008EBBE1 /* XYSwitchCell.xib in Resources */,
 				6FCC360B1C0C839C000ECB8E /* Assets.xcassets in Resources */,
+				6F2AB9A31C1867F50060123A /* XYTopicCell.xib in Resources */,
 				6F16B83C1C16F796008EBBE1 /* XYFollowViewController.xib in Resources */,
 				6FCC36071C0C839C000ECB8E /* LaunchImage-800-667h@2x.png in Resources */,
 			);
@@ -756,6 +775,7 @@
 				6F16B8921C172E79008EBBE1 /* XYTitleButton.m in Sources */,
 				6F16B8641C171395008EBBE1 /* XYSettingCell.m in Sources */,
 				6F16B8571C16F796008EBBE1 /* XYConst.m in Sources */,
+				6F2AB9A21C1867F50060123A /* XYTopicCell.m in Sources */,
 				6F16B8491C16F796008EBBE1 /* NSObject+XYExtension.m in Sources */,
 				6F16B83E1C16F796008EBBE1 /* XYTabBarController.m in Sources */,
 				6F16B8411C16F796008EBBE1 /* XYSettingViewController.m in Sources */,
@@ -770,6 +790,8 @@
 				6F16B85B1C16F796008EBBE1 /* XYRecommendTag.m in Sources */,
 				6F16B8951C17442E008EBBE1 /* XYAllViewController.m in Sources */,
 				6F16B8981C17444E008EBBE1 /* XYVideoViewController.m in Sources */,
+				6F138B781C1884FA00A6CCA1 /* UIImageView+XYExtension.m in Sources */,
+				6F2AB9A61C187D1A0060123A /* XYTopic.m in Sources */,
 				6F16B83A1C16F796008EBBE1 /* XYEssenceViewController.m in Sources */,
 				6F16B8381C16F796008EBBE1 /* XYAdViewController.m in Sources */,
 				6F16B89E1C174480008EBBE1 /* XYPictureViewController.m in Sources */,

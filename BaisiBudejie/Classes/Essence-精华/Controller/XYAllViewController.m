@@ -7,47 +7,94 @@
 //
 
 #import "XYAllViewController.h"
+#import "XYTopicCell.h"
+#import "XYTopic.h"
+#import "XYHTTPSessionManager.h"
+#import <MJExtension.h>
+
+static NSString * const XYTopicCellId = @"topic";
 
 @interface XYAllViewController ()
-
+/** 会话管理者 */
+@property (nonatomic, weak) XYHTTPSessionManager *manager;
+/** 帖子模型数组 */
+@property (nonatomic, strong) NSMutableArray *topics;
 @end
 
 @implementation XYAllViewController
-
+#pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundColor = [UIColor clearColor];
+    // 初始化tableView
+    [self setUpTableview];
     
-    // tableView设置内边距，防止导航栏和TabBar挡住内容
+    // 加载新帖数据
+    [self loadNewTopics];
+}
+
+/**
+ *  初始化tableView
+ */
+- (void)setUpTableview
+{
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     self.tableView.contentInset = UIEdgeInsetsMake(XYNavMaxY + XYTitlesViewH, 0, XYTabBarH, 0);
-    // 防止导航栏和TabBar挡住滚动条
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    self.tableView.rowHeight = 400;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XYTopicCell class]) bundle:nil] forCellReuseIdentifier:XYTopicCellId];
+}
+
+#pragma mark - 数据处理
+/**
+ *  加载新帖数据
+ */
+- (void)loadNewTopics
+{
+    // 请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @1;
+    
+    // 发送GET请求
+    XYWeakSelf
+    [self.manager GET:XYCommonURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        
+        weakSelf.topics = [XYTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        [weakSelf.tableView reloadData];
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        XY_Log(@"请求失败");
+    }];
 }
 
 #pragma mark - <数据源>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 40;
+    return self.topics.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
-    static UIColor *bgColor = nil;
-    if (!bgColor) {
-        bgColor = [UIColor xy_colorRandom];
-    }
+    XYTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:XYTopicCellId];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        cell.backgroundColor = bgColor;
-    }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %zd", self.class, indexPath.row];
+    cell.topic = self.topics[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - 懒加载
+- (XYHTTPSessionManager *)manager
+{
+    if (!_manager) {
+        _manager = [XYHTTPSessionManager manager];
+    }
+    return _manager;
 }
 
 @end
