@@ -18,6 +18,11 @@
     [super viewDidLoad];
     
     self.tableView.backgroundColor = [UIColor clearColor];
+
+    // tableView设置内边距，防止导航栏和TabBar挡住内容
+    self.tableView.contentInset = UIEdgeInsetsMake(XYNavMaxY + XYTitlesViewH, 0, XYTabBarH, 0);
+    // 防止导航栏和TabBar挡住滚动条
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
 }
 
 #pragma mark - <数据源>

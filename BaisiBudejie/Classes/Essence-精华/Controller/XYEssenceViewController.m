@@ -16,13 +16,15 @@
 #import "XYPictureViewController.h"
 #import "XYWordViewController.h"
 
-@interface XYEssenceViewController ()
+@interface XYEssenceViewController () <UIScrollViewDelegate>
 /** 标题栏 */
 @property (nonatomic, weak) UIView *titlesView;
 /** 目前选中按钮 */
 @property (nonatomic, weak) XYTitleButton *selectedButton;
 /** 按钮下划线 */
 @property (nonatomic, weak) UIView *underlineView;
+/** 内容scrollView */
+@property (nonatomic, weak) UIScrollView *scrollView;
 @end
 
 @implementation XYEssenceViewController
@@ -39,7 +41,7 @@
     [self setUpAllChildViewControllers];
     
     // 初始化内容view
-    [self setUpContentView];
+    [self setUpScrollView];
     
     // 初始化标题栏
     [self setUpTitleView];
@@ -137,27 +139,31 @@
 /**
  *  初始化内容view
  */
-- (void)setUpContentView
+- (void)setUpScrollView
 {
+    // 不要自动设置内边距
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = [UIColor clearColor];
+    scrollView.pagingEnabled = YES;
+    scrollView.delegate = self;
+    self.scrollView = scrollView;
     [self.view addSubview:scrollView];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     
     // scrollView中添加所有子控制器的view
     [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UITableViewController * _Nonnull childVc, NSUInteger idx, BOOL * _Nonnull stop) {
 
         childVc.view.frame = CGRectMake(idx * scrollView.xy_width, 0, scrollView.xy_width, scrollView.xy_height);
 
-        // tableView设置内边距，防止导航栏和TabBar挡住内容
-        childVc.tableView.contentInset = UIEdgeInsetsMake(XYNavMaxY + XYTitlesViewH, 0, XYTabBarH, 0);
-        // 防止导航栏和TabBar挡住滚动条
-        childVc.tableView.scrollIndicatorInsets = childVc.tableView.contentInset;
         [scrollView addSubview:childVc.view];
     }];
-    scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(self.childViewControllers.count * scrollView.xy_width, 0);
+
+    // 设置scrollView的contentSize
+    CGSize contentSize = scrollView.contentSize;
+    contentSize.width = self.childViewControllers.count * scrollView.xy_width;
+    scrollView.contentSize = contentSize;
 }
 
 #pragma mark - 监听
@@ -175,13 +181,33 @@
  */
 - (void)titleClick:(XYTitleButton *)titleButton
 {
+    // 切换选中按钮
     self.selectedButton.selected = NO;
     titleButton.selected = YES;
     self.selectedButton = titleButton;
 
+    // 移动下划线
     [UIView animateWithDuration:0.25 animations:^{
         self.underlineView.xy_width = titleButton.titleLabel.xy_width + XYCommonMargin;
         self.underlineView.xy_centerX = titleButton.xy_centerX;
     }];
+    
+    // 让scrollView滚动到对应的子控制器界面
+    NSInteger index = [titleButton.superview.subviews indexOfObject:titleButton];
+
+    CGPoint offset = self.scrollView.contentOffset;
+    offset.x = index * self.scrollView.xy_width;
+    [self.scrollView setContentOffset:offset animated:YES];
+}
+
+#pragma mark - <UIScrollViewDelegate>
+// 手动减速
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    // 获取当前页面角标
+    NSInteger index = scrollView.contentOffset.x / scrollView.xy_width;
+
+    XYTitleButton *titleButton = self.titlesView.subviews[index];
+    [self titleClick:titleButton];
 }
 @end
