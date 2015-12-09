@@ -45,6 +45,9 @@
     
     // 初始化标题栏
     [self setUpTitleView];
+    
+    // 默认添加第一个子控制器的view到scrollView中
+    [self addChildVcViewIntoScrollView];
 }
 
 // 初始化导航栏
@@ -56,7 +59,7 @@
     // 导航栏按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem xy_itemWithImage:@"MainTagSubIcon" highlightedImage:@"MainTagSubIconClick" target:self action:@selector(tagClick)];
 }
-
+#pragma mark 标题栏
 /**
  *  初始化标题栏
  */
@@ -124,6 +127,7 @@
     underlineView.xy_centerX = firstTitleButton.xy_centerX;
 }
 
+#pragma mark 内容
 /**
  *  添加所有内容子控制器
  */
@@ -145,20 +149,17 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     UIScrollView *scrollView = [[UIScrollView alloc] init];
+    
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = [UIColor clearColor];
-    scrollView.pagingEnabled = YES;
     scrollView.delegate = self;
+    // 开启分页，隐藏水平竖直滚动条
+    scrollView.pagingEnabled = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    
     self.scrollView = scrollView;
     [self.view addSubview:scrollView];
-    
-    // scrollView中添加所有子控制器的view
-    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UITableViewController * _Nonnull childVc, NSUInteger idx, BOOL * _Nonnull stop) {
-
-        childVc.view.frame = CGRectMake(idx * scrollView.xy_width, 0, scrollView.xy_width, scrollView.xy_height);
-
-        [scrollView addSubview:childVc.view];
-    }];
 
     // 设置scrollView的contentSize
     CGSize contentSize = scrollView.contentSize;
@@ -200,8 +201,27 @@
     [self.scrollView setContentOffset:offset animated:YES];
 }
 
+#pragma mark - 其他
+/**
+ *  添加对应位置的子控制器view到scrollView中
+ */
+- (void)addChildVcViewIntoScrollView
+{
+    // 对应位置子控制器
+    NSInteger index = self.scrollView.contentOffset.x / self.scrollView.xy_width;
+    UIViewController *childVc = self.childViewControllers[index];
+
+    // 如果子控制器view已经被加载过，返回
+    if (childVc.isViewLoaded) return;
+    
+    // 添加子控制器view到scrollView
+    childVc.view.frame = self.scrollView.bounds;
+    [self.scrollView addSubview:childVc.view];
+}
+
+
 #pragma mark - <UIScrollViewDelegate>
-// 手动减速
+// scrollView停止减速（手指拖拽）
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     // 获取当前页面角标
@@ -209,5 +229,12 @@
 
     XYTitleButton *titleButton = self.titlesView.subviews[index];
     [self titleClick:titleButton];
+    [self addChildVcViewIntoScrollView];
+}
+
+// setContentOffset/scrollRectVisible:animated: 方法动画结束后
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self addChildVcViewIntoScrollView];
 }
 @end
