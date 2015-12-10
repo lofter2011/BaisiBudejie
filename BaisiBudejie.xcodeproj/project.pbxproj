@@ -65,6 +65,8 @@
 		6FCC36091C0C839C000ECB8E /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36021C0C839C000ECB8E /* LaunchImage.png */; };
 		6FCC360A1C0C839C000ECB8E /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36031C0C839C000ECB8E /* LaunchImage@2x.png */; };
 		6FCC360B1C0C839C000ECB8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FCC36041C0C839C000ECB8E /* Assets.xcassets */; };
+		6FCFD87A1C19E29B00D5F5F1 /* NSCalendar+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFD8771C19E29B00D5F5F1 /* NSCalendar+XYExtension.m */; };
+		6FCFD87B1C19E29B00D5F5F1 /* NSDate+XYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFD8791C19E29B00D5F5F1 /* NSDate+XYExtension.m */; };
 		CE0BCF2319C56F263B1011F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9ABAAB9C6E44050EDE78FAA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +177,10 @@
 		6FCC36031C0C839C000ECB8E /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		6FCC36041C0C839C000ECB8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FCC36051C0C839C000ECB8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FCFD8761C19E29B00D5F5F1 /* NSCalendar+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+XYExtension.h"; sourceTree = "<group>"; };
+		6FCFD8771C19E29B00D5F5F1 /* NSCalendar+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+XYExtension.m"; sourceTree = "<group>"; };
+		6FCFD8781C19E29B00D5F5F1 /* NSDate+XYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+XYExtension.h"; sourceTree = "<group>"; };
+		6FCFD8791C19E29B00D5F5F1 /* NSDate+XYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XYExtension.m"; sourceTree = "<group>"; };
 		C4D71F382C3283D7D5151A6C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9ABAAB9C6E44050EDE78FAA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -467,6 +473,10 @@
 		6F16B8081C16F796008EBBE1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6FCFD8761C19E29B00D5F5F1 /* NSCalendar+XYExtension.h */,
+				6FCFD8771C19E29B00D5F5F1 /* NSCalendar+XYExtension.m */,
+				6FCFD8781C19E29B00D5F5F1 /* NSDate+XYExtension.h */,
+				6FCFD8791C19E29B00D5F5F1 /* NSDate+XYExtension.m */,
 				6F16B8091C16F796008EBBE1 /* NSDictionary+PropertyCode.h */,
 				6F16B80A1C16F796008EBBE1 /* NSDictionary+PropertyCode.m */,
 				6F16B80B1C16F796008EBBE1 /* NSObject+XYExtension.h */,
@@ -773,6 +783,7 @@
 				6F16B85A1C16F796008EBBE1 /* XYRecommendTagViewController.m in Sources */,
 				6F16B8451C16F796008EBBE1 /* XYSquareButton.m in Sources */,
 				6F16B8921C172E79008EBBE1 /* XYTitleButton.m in Sources */,
+				6FCFD87A1C19E29B00D5F5F1 /* NSCalendar+XYExtension.m in Sources */,
 				6F16B8641C171395008EBBE1 /* XYSettingCell.m in Sources */,
 				6F16B8571C16F796008EBBE1 /* XYConst.m in Sources */,
 				6F2AB9A21C1867F50060123A /* XYTopicCell.m in Sources */,
@@ -790,6 +801,7 @@
 				6F16B85B1C16F796008EBBE1 /* XYRecommendTag.m in Sources */,
 				6F16B8951C17442E008EBBE1 /* XYAllViewController.m in Sources */,
 				6F16B8981C17444E008EBBE1 /* XYVideoViewController.m in Sources */,
+				6FCFD87B1C19E29B00D5F5F1 /* NSDate+XYExtension.m in Sources */,
 				6F138B781C1884FA00A6CCA1 /* UIImageView+XYExtension.m in Sources */,
 				6F2AB9A61C187D1A0060123A /* XYTopic.m in Sources */,
 				6F16B83A1C16F796008EBBE1 /* XYEssenceViewController.m in Sources */,
