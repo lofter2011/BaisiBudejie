@@ -74,7 +74,7 @@ static NSString * const XYRecommendTagCellId = @"tag";
     __weak typeof(self) weakSelf = self;
 
     // 发送GET请求
-    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, NSArray * _Nonnull responseObject) {
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray * _Nonnull responseObject) {
         
         // 字典数组 -> 模型数组
         weakSelf.recommendTags = [XYRecommendTag mj_objectArrayWithKeyValuesArray:responseObject];

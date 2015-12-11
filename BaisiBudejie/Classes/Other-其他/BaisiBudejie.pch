@@ -33,6 +33,9 @@
 // 获取应用主窗口
 #define appKeyWidow [UIApplication sharedApplication].keyWindow
 
+// 网络获取的数据写到桌面plist
+#define XYAFNWriteToPlist(filename) [responseObject writeToFile:[NSString stringWithFormat:@"/Users/hanxiaoyu/Desktop/%@.plist", filename] atomically:YES];
+
 // block中弱引用self
 #define XYWeakSelf __weak typeof(self) weakSelf = self;
 

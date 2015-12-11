@@ -80,7 +80,7 @@
     __weak typeof(self) weakSelf = self;
     
     // 发送GET请求
-    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         // 字典数组 -> 模型数组
         NSArray *squares = [XYSquare mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
         // 根据获取的方块数据添加方块

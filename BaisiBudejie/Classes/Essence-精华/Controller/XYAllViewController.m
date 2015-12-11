@@ -11,6 +11,8 @@
 #import "XYTopic.h"
 #import "XYHTTPSessionManager.h"
 #import <MJExtension.h>
+#import "XYRefreshFooter.h"
+
 
 static NSString * const XYTopicCellId = @"topic";
 
@@ -19,6 +21,9 @@ static NSString * const XYTopicCellId = @"topic";
 @property (nonatomic, weak) XYHTTPSessionManager *manager;
 /** 帖子模型数组 */
 @property (nonatomic, strong) NSMutableArray *topics;
+
+/** 加载下一页数据 */
+@property (nonatomic, strong) NSString *maxtime;
 @end
 
 @implementation XYAllViewController
@@ -28,6 +33,9 @@ static NSString * const XYTopicCellId = @"topic";
     
     // 初始化tableView
     [self setUpTableview];
+    
+    // 设置刷新控件
+    [self setUpRefresh];
     
     // 加载新帖数据
     [self loadNewTopics];
@@ -43,9 +51,17 @@ static NSString * const XYTopicCellId = @"topic";
 
     self.tableView.contentInset = UIEdgeInsetsMake(XYNavMaxY + XYTitlesViewH, 0, XYTabBarH, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-    self.tableView.rowHeight = 400;
+    self.tableView.rowHeight = 200;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XYTopicCell class]) bundle:nil] forCellReuseIdentifier:XYTopicCellId];
+}
+
+/**
+ *  初始化刷新控件
+ */
+- (void)setUpRefresh
+{
+    self.tableView.mj_footer = [XYRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
 }
 
 #pragma mark - 数据处理
@@ -62,12 +78,49 @@ static NSString * const XYTopicCellId = @"topic";
     
     // 发送GET请求
     XYWeakSelf
-    [self.manager GET:XYCommonURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [self.manager GET:XYCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+
+        // 设置maxtime
+        weakSelf.maxtime = responseObject[@"info"][@"maxtime"];
         
+        // 字典数组 -> 模型数组
         weakSelf.topics = [XYTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         [weakSelf.tableView reloadData];
 
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        XY_Log(@"请求失败");
+    }];
+}
+
+/**
+ *  加载更多帖子数据
+ */
+- (void)loadMoreTopics
+{
+    // 请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @1;
+    params[@"maxtime"] = self.maxtime;
+    
+    // 发送GET请求
+    XYWeakSelf
+    [self.manager GET:XYCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        
+        // 设置maxtime
+        weakSelf.maxtime = responseObject[@"info"][@"maxtime"];
+
+        // 新数据转成模型数组
+        NSArray *moreTopics = [XYTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        // 添加新数据
+        [weakSelf.topics addObjectsFromArray:moreTopics];
+        
+        [weakSelf.tableView reloadData];
+        
+        [weakSelf.tableView.mj_footer endRefreshing];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XY_Log(@"请求失败");
     }];
