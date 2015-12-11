@@ -123,6 +123,7 @@ static NSString * const XYTopicCellId = @"topic";
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XY_Log(@"请求失败");
+        [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }
 
