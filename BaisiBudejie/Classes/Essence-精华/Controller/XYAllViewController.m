@@ -12,7 +12,7 @@
 #import "XYHTTPSessionManager.h"
 #import <MJExtension.h>
 #import "XYRefreshFooter.h"
-
+#import "XYRefreshHeader.h"
 
 static NSString * const XYTopicCellId = @"topic";
 
@@ -36,9 +36,6 @@ static NSString * const XYTopicCellId = @"topic";
     
     // 设置刷新控件
     [self setUpRefresh];
-    
-    // 加载新帖数据
-    [self loadNewTopics];
 }
 
 /**
@@ -61,6 +58,12 @@ static NSString * const XYTopicCellId = @"topic";
  */
 - (void)setUpRefresh
 {
+    // header 下拉刷新最新数据
+    self.tableView.mj_header = [XYRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
+    // 先获取一次最新数据
+    [self.tableView.mj_header beginRefreshing];
+    
+    // footer 上拉加载更多数据
     self.tableView.mj_footer = [XYRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
 }
 
@@ -70,6 +73,9 @@ static NSString * const XYTopicCellId = @"topic";
  */
 - (void)loadNewTopics
 {
+    // 取消之前请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+
     // 请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
@@ -87,9 +93,15 @@ static NSString * const XYTopicCellId = @"topic";
         weakSelf.topics = [XYTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         [weakSelf.tableView reloadData];
+        
+        // 结束刷新(恢复默认状态)
+        [weakSelf.tableView.mj_header endRefreshing];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XY_Log(@"请求失败");
+        
+        // 结束刷新(恢复默认状态)
+        [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
 
@@ -98,6 +110,9 @@ static NSString * const XYTopicCellId = @"topic";
  */
 - (void)loadMoreTopics
 {
+    // 取消之前请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
     // 请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";

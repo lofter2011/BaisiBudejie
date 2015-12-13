@@ -17,7 +17,7 @@
 {
     [super prepare];
     
-    [self setTitle:@"" forState:MJRefreshStateIdle];
+    [self setTitle:@"上拉查看更多" forState:MJRefreshStateIdle];
     [self setTitle:@"刷新ing" forState:MJRefreshStateRefreshing];
 }
 
