@@ -20,6 +20,12 @@
     [self setTitle:@"下拉加载最新数据" forState:MJRefreshStateIdle];
     [self setTitle:@"加载ing" forState:MJRefreshStateRefreshing];
     
+    // 根据拖拽切换透明度
+    self.automaticallyChangeAlpha = YES;
+    // 隐藏最近更新时间
+    self.lastUpdatedTimeLabel.hidden = YES;
+    
+    
 }
 
 /**
