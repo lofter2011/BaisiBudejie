@@ -7,9 +7,12 @@
 //
 
 #import "XYTopic.h"
+#import "XYComment.h"
+#import "XYUser.h"
 
 @implementation XYTopic
 
+#pragma mark - 模型属性处理
 /**
  *  重写create_at的get方法, 对日期进行处理
  */
@@ -55,4 +58,46 @@
     
 }
 
+- (CGFloat)cellHeight
+{
+    // 如果_cellHeight值非0(已经算过), 直接返回
+    if (_cellHeight) return _cellHeight;
+    
+    // 1.头像
+    _cellHeight = XYCommonMargin; // 头像到顶部间距
+    _cellHeight += 35; // 头像高度
+    _cellHeight += XYCommonMargin; // 头像到文字内容间距
+    
+    // 2.文字内容
+    CGSize textSize = CGSizeMake(screenW - 2 * XYCommonMargin, MAXFLOAT);
+    CGFloat textH = [self.text boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height;
+    _cellHeight += textH; // 文字内容高度
+    _cellHeight += XYCommonMargin; // 文字内容到中间内容的间距
+    
+    // 3.中间内容高度
+    if (self.type != XYTopicTypeWord) {
+        _cellHeight += 100;
+    }
+
+    
+    // 4.最热评论
+    if (self.top_cmt) { // 有最热评论加上最热评论高度
+        
+        // 最热评论内容高度
+        NSString *content = [NSString stringWithFormat:@"%@：%@", self.top_cmt.user.username, self.top_cmt.content];
+        CGFloat contentH = [content boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:0].size.height;
+        
+        _cellHeight += 20; // 最热评论标题高度
+        _cellHeight += contentH; // 最热评论内容高度
+        _cellHeight += XYCommonMargin; // 最热评论到底部工具条间距
+    }
+    
+    // 5.底部工具条
+    _cellHeight += 35;
+    
+    // 6.最后空出的表格间距
+    _cellHeight += XYCommonMargin;
+    
+    return _cellHeight;
+}
 @end

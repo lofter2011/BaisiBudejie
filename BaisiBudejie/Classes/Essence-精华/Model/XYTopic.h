@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, XYTopicType) {
+    /** 图片 */
+    XYTopicTypePicture = 10,
+    /** 段子 */
+    XYTopicTypeWord = 29,
+    /** 音频 */
+    XYTopicTypeAudio = 31,
+    /** 视频 */
+    XYTopicTypeVideo = 41
+};
+
 @class XYComment;
 
 @interface XYTopic : NSObject
@@ -29,4 +40,11 @@
 @property (nonatomic, assign) NSInteger comment;
 /** 最热评论(通过MJExtension框架进行操作) */
 @property (nonatomic, strong) XYComment *top_cmt;
+/** 帖子类型 */
+@property (nonatomic, assign) XYTopicType type;
+
+/********** 额外属性 **********/
+
+/** cell的高度 */
+@property (nonatomic, assign) CGFloat cellHeight;
 @end

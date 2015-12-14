@@ -20,7 +20,7 @@ static NSString * const XYTopicCellId = @"topic";
 /** 会话管理者 */
 @property (nonatomic, weak) XYHTTPSessionManager *manager;
 /** 帖子模型数组 */
-@property (nonatomic, strong) NSMutableArray *topics;
+@property (nonatomic, strong) NSMutableArray<XYTopic *> *topics;
 
 /** 加载下一页数据 */
 @property (nonatomic, strong) NSString *maxtime;
@@ -48,7 +48,6 @@ static NSString * const XYTopicCellId = @"topic";
 
     self.tableView.contentInset = UIEdgeInsetsMake(XYNavMaxY + XYTitlesViewH, 0, XYTabBarH, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-    self.tableView.rowHeight = 200;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XYTopicCell class]) bundle:nil] forCellReuseIdentifier:XYTopicCellId];
 }
@@ -156,6 +155,11 @@ static NSString * const XYTopicCellId = @"topic";
     cell.topic = self.topics[indexPath.row];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.topics[indexPath.row].cellHeight;
 }
 
 #pragma mark - 懒加载

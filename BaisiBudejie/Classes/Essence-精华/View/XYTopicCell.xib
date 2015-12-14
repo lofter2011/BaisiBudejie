@@ -47,10 +47,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PD-QO-jyr" userLabel="内容">
-                        <rect key="frame" x="10" y="83" width="440" height="83"/>
-                        <color key="backgroundColor" red="0.72488290079999995" green="0.74074655909999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWg-u6-A3B" userLabel="最热评论">
                         <rect key="frame" x="10" y="176" width="440" height="53"/>
                         <subviews>
@@ -185,11 +181,8 @@
                     <constraint firstAttribute="trailing" secondItem="0On-k7-bJP" secondAttribute="trailing" id="DDW-jQ-wQB"/>
                     <constraint firstItem="9YN-8r-kNv" firstAttribute="bottom" secondItem="D04-Vx-K6m" secondAttribute="bottom" id="Dey-Zv-kWS"/>
                     <constraint firstItem="ynP-vC-FMX" firstAttribute="top" secondItem="D04-Vx-K6m" secondAttribute="top" id="EgM-7b-bRK"/>
-                    <constraint firstAttribute="trailing" secondItem="2PD-QO-jyr" secondAttribute="trailing" constant="10" id="Gz7-h2-xox"/>
-                    <constraint firstItem="XWg-u6-A3B" firstAttribute="top" secondItem="2PD-QO-jyr" secondAttribute="bottom" constant="10" id="PiO-0p-AoA"/>
                     <constraint firstItem="9YN-8r-kNv" firstAttribute="leading" secondItem="ynP-vC-FMX" secondAttribute="leading" id="UnD-LT-kSS"/>
                     <constraint firstItem="31Y-CA-ldS" firstAttribute="top" secondItem="D04-Vx-K6m" secondAttribute="bottom" constant="10" id="VLI-Rj-VJY"/>
-                    <constraint firstItem="2PD-QO-jyr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VQh-gR-eRf"/>
                     <constraint firstItem="D04-Vx-K6m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VsL-3O-1B0"/>
                     <constraint firstItem="XWg-u6-A3B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ywj-uW-V1g"/>
                     <constraint firstItem="bVd-zS-axv" firstAttribute="centerY" secondItem="D04-Vx-K6m" secondAttribute="centerY" id="Zgw-Hu-eya"/>
@@ -199,7 +192,6 @@
                     <constraint firstAttribute="bottom" secondItem="0On-k7-bJP" secondAttribute="bottom" id="lig-Xj-j9S"/>
                     <constraint firstItem="ynP-vC-FMX" firstAttribute="leading" secondItem="D04-Vx-K6m" secondAttribute="trailing" constant="10" id="ti7-2f-Omb"/>
                     <constraint firstItem="31Y-CA-ldS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="vZM-5Z-S4p"/>
-                    <constraint firstItem="2PD-QO-jyr" firstAttribute="top" secondItem="31Y-CA-ldS" secondAttribute="bottom" constant="10" id="wBr-6M-bwZ"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
