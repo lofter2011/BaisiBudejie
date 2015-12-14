@@ -8,7 +8,9 @@
 
 #import "XYTopicCell.h"
 #import "XYTopic.h"
+#import "XYComment.h"
 #import <UIImageView+WebCache.h>
+#import "XYUser.h"
 
 @interface XYTopicCell ()
 
@@ -73,6 +75,15 @@
     [self setTitleForButton:self.caiButton number:topic.cai placeholder:@"踩"];
     [self setTitleForButton:self.repostButton number:topic.repost placeholder:@"分享"];
     [self setTitleForButton:self.commentButton number:topic.comment placeholder:@"评论"];
+    
+    if (topic.top_cmt) {
+        self.topCommentView.hidden = NO;
+        NSString *username = topic.top_cmt.user.username;
+        NSString *content = topic.top_cmt.content;
+        self.topCommentContentLabel.text = [NSString stringWithFormat:@"%@：%@", username, content];
+    } else {
+        self.topCommentView.hidden = YES;
+    }
 }
 
 /**

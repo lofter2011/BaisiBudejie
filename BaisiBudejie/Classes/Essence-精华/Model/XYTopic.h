@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class XYComment;
+
 @interface XYTopic : NSObject
 /** 用户的名字 */
 @property (nonatomic, strong) NSString *name;
@@ -25,4 +27,6 @@
 @property (nonatomic, assign) NSInteger repost;
 /** 评论数量 */
 @property (nonatomic, assign) NSInteger comment;
+/** 最热评论(通过MJExtension框架进行操作) */
+@property (nonatomic, strong) XYComment *top_cmt;
 @end
