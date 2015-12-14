@@ -74,9 +74,18 @@
     _cellHeight += textH; // 文字内容高度
     _cellHeight += XYCommonMargin; // 文字内容到中间内容的间距
     
-    // 3.中间内容高度
+    // 3.中间图片内容高度
     if (self.type != XYTopicTypeWord) {
-        _cellHeight += 100;
+        
+        CGFloat pictureW = screenW - 2 * XYCommonMargin; // 图片显示宽度
+        CGFloat scale = pictureW / self.width; // 图片缩放比例
+        CGFloat pictureH = self.height * scale; // 图片显示高度
+        pictureH = pictureH > screenH ? 200 : pictureH;
+        
+        self.pictureFrame = CGRectMake(XYCommonMargin, _cellHeight, pictureW, pictureH);
+        
+        _cellHeight += pictureH; // 显示图片高度
+        _cellHeight += XYCommonMargin; // 中间图片内容到最热评论间距
     }
 
     

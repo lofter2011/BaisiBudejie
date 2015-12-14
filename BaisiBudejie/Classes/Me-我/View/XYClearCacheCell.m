@@ -34,7 +34,7 @@
         // 子线程中计算缓存大小
         XYWeakSelf
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [NSThread sleepForTimeInterval:7]; // 模拟延迟
+//            [NSThread sleepForTimeInterval:3]; // 模拟延迟
             
             // 获取文件大小信息
             NSString *cachesFileSizeText = [self getCachesFileSizeText];

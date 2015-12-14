@@ -43,8 +43,15 @@ typedef NS_ENUM(NSInteger, XYTopicType) {
 /** 帖子类型 */
 @property (nonatomic, assign) XYTopicType type;
 
+/** 图片宽度 */
+@property (nonatomic, assign) NSInteger width;
+/** 图片高度 */
+@property (nonatomic, assign) NSInteger height;
+
 /********** 额外属性 **********/
 
 /** cell的高度 */
 @property (nonatomic, assign) CGFloat cellHeight;
+/** 中间图片内容的frame */
+@property (nonatomic, assign) CGRect pictureFrame;
 @end

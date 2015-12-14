@@ -7,10 +7,15 @@
 //
 
 #import "XYTopicCell.h"
+#import <UIImageView+WebCache.h>
+
 #import "XYTopic.h"
 #import "XYComment.h"
-#import <UIImageView+WebCache.h>
 #import "XYUser.h"
+
+#import "XYTopicVideoView.h"
+#import "XYTopicAudioView.h"
+#import "XYTopicPictureView.h"
 
 @interface XYTopicCell ()
 
@@ -37,6 +42,14 @@
 /** 评论按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 
+/***** 帖子中间内容控件 *****/
+
+/** 视频帖子中间的控件 */
+@property (nonatomic, weak) XYTopicVideoView *videoView;
+/** 图片帖子中间的控件 */
+@property (nonatomic, weak) XYTopicPictureView *pictureView;
+/** 声音帖子中间的控件 */
+@property (nonatomic, weak) XYTopicAudioView *audioView;
 
 @end
 
@@ -48,6 +61,30 @@
 
 - (void)awakeFromNib {
     self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    switch (self.topic.type) {
+            
+        case XYTopicTypeVideo:
+            self.videoView.frame = self.topic.pictureFrame;
+            break;
+            
+        case XYTopicTypeAudio:
+            self.audioView.frame = self.topic.pictureFrame;
+            break;
+            
+        case XYTopicTypePicture:
+            self.pictureView.frame = self.topic.pictureFrame;
+            break;
+            
+        default:
+            break;
+    }
+
 }
 
 #pragma mark - 设置内容
@@ -66,16 +103,21 @@
  */
 - (void)setTopic:(XYTopic *)topic
 {
+    _topic = topic;
+    
+    // 顶部内容
     [self.profileImageView xy_setHeader:topic.profile_image placeholderImageName:@"setup-head-default"];
     self.nameLabel.text = topic.name;
     self.createdAtLabel.text = topic.created_at;
     self.text_label.text = topic.text;
     
+    // 底部工具栏按钮的数字
     [self setTitleForButton:self.dingButton number:topic.ding placeholder:@"顶"];
     [self setTitleForButton:self.caiButton number:topic.cai placeholder:@"踩"];
     [self setTitleForButton:self.repostButton number:topic.repost placeholder:@"分享"];
     [self setTitleForButton:self.commentButton number:topic.comment placeholder:@"评论"];
     
+    // 最热评论
     if (topic.top_cmt) {
         self.topCommentView.hidden = NO;
         NSString *username = topic.top_cmt.user.username;
@@ -83,6 +125,45 @@
         self.topCommentContentLabel.text = [NSString stringWithFormat:@"%@：%@", username, content];
     } else {
         self.topCommentView.hidden = YES;
+    }
+    
+    // 中间内容
+    switch (topic.type) {
+        case XYTopicTypeVideo:
+        {
+            self.videoView.hidden = NO;
+            self.audioView.hidden = YES;
+            self.pictureView.hidden = YES;
+            
+            break;
+        }
+        case XYTopicTypeAudio:
+        {
+            self.videoView.hidden = YES;
+            self.audioView.hidden = NO;
+            self.pictureView.hidden = YES;
+            
+            break;
+        }
+        case XYTopicTypePicture:
+        {
+            self.videoView.hidden = YES;
+            self.audioView.hidden = YES;
+            self.pictureView.hidden = NO;
+            
+            break;
+        }
+        case XYTopicTypeWord:
+        {
+            self.videoView.hidden = YES;
+            self.audioView.hidden = YES;
+            self.pictureView.hidden = YES;
+            
+            break;
+        }
+            
+        default:
+            break;
     }
 }
 
@@ -102,4 +183,35 @@
     [button setTitle:title forState:UIControlStateNormal];
 }
 
+#pragma mark - 懒加载
+
+- (XYTopicVideoView *)videoView
+{
+    if (!_videoView) {
+        XYTopicVideoView *videoView = [XYTopicVideoView xy_viewFromXib];
+        _videoView = videoView;
+        [self.contentView addSubview:videoView];
+    }
+    return _videoView;
+}
+
+- (XYTopicAudioView *)audioView
+{
+    if (!_audioView) {
+        XYTopicAudioView *audioView = [XYTopicAudioView xy_viewFromXib];
+        _audioView = audioView;
+        [self.contentView addSubview:audioView];
+    }
+    return _audioView;
+}
+
+- (XYTopicPictureView *)pictureView
+{
+    if (!_pictureView) {
+        XYTopicPictureView *pictureView = [XYTopicPictureView xy_viewFromXib];
+        _pictureView = pictureView;
+        [self.contentView addSubview:pictureView];
+    }
+    return _pictureView;
+}
 @end

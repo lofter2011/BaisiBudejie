@@ -12,7 +12,7 @@
 #ifdef __OBJC__
 
 /** 常用头文件 */
-#import "UIView+Frame.h"
+#import "UIView+XYExtension.h"
 #import "UIBarButtonItem+XYExtension.h"
 #import "UIImage+XYExtension.h"
 #import "UIImageView+XYExtension.h"

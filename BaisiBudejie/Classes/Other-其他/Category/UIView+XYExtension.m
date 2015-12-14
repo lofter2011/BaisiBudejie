@@ -1,15 +1,18 @@
 //
-//  UIView+Frame.m
+//  UIView+XYExtension.m
 //  工具分类
 //
 //  Created by 韩啸宇 on 15/10/8.
 //  Copyright (c) 2015年 韩啸宇. All rights reserved.
 //
 
-#import "UIView+Frame.h"
+#import "UIView+XYExtension.h"
 
-@implementation UIView (Frame)
+@implementation UIView (XYExtension)
 #pragma mark - size
+
+/******************** 大小位置相关 ********************/
+
 // size的get/set方法实现
 - (void)setXy_size:(CGSize)xy_size
 {
@@ -109,6 +112,14 @@
 - (CGFloat)xy_height
 {
     return self.frame.size.height;
+}
+
+#pragma mark - 实例化方法
+/******************** 实例化方法 ********************/
+
++ (instancetype)xy_viewFromXib
+{
+    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
 }
 
 @end

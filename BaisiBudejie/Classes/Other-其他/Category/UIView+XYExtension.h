@@ -1,5 +1,5 @@
 //
-//  UIView+Frame.h
+//  UIView+XYExtension.h
 //  工具分类
 //
 //  Created by 韩啸宇 on 15/10/8.
@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Frame)
+@interface UIView (XYExtension)
+
+/******************** 大小位置相关 ********************/
+
 /** size的get/set方法声明 */
 @property (nonatomic, assign) CGSize xy_size;
 
@@ -25,4 +28,10 @@
 @property (nonatomic, assign) CGFloat xy_width;
 /** Height */
 @property (nonatomic, assign) CGFloat xy_height;
+
+/******************** 实例化方法 ********************/
+
+/** 从xib中获取view */
++ (instancetype)xy_viewFromXib;
+
 @end
