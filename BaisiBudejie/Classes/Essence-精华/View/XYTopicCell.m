@@ -135,6 +135,8 @@
             self.audioView.hidden = YES;
             self.pictureView.hidden = YES;
             
+            self.videoView.topic = topic;
+            
             break;
         }
         case XYTopicTypeAudio:
@@ -143,6 +145,8 @@
             self.audioView.hidden = NO;
             self.pictureView.hidden = YES;
             
+            self.audioView.topic = topic;
+            
             break;
         }
         case XYTopicTypePicture:
@@ -150,6 +154,8 @@
             self.videoView.hidden = YES;
             self.audioView.hidden = YES;
             self.pictureView.hidden = NO;
+
+            self.pictureView.topic = topic;
             
             break;
         }

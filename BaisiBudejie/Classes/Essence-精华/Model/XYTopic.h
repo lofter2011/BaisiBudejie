@@ -47,6 +47,14 @@ typedef NS_ENUM(NSInteger, XYTopicType) {
 @property (nonatomic, assign) NSInteger width;
 /** 图片高度 */
 @property (nonatomic, assign) NSInteger height;
+/** 小图 */
+@property (nonatomic, copy) NSString *small_image;
+/** 中图 */
+@property (nonatomic, copy) NSString *middle_image;
+/** 大图 */
+@property (nonatomic, copy) NSString *large_image;
+/** 是否为动态图片 */
+@property (nonatomic, assign) BOOL is_gif;
 
 /********** 额外属性 **********/
 

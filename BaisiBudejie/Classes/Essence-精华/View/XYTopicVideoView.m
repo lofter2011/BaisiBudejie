@@ -7,12 +7,18 @@
 //
 
 #import "XYTopicVideoView.h"
+#import "XYTopic.h"
 
 @implementation XYTopicVideoView
 
 - (void)awakeFromNib
 {
     self.autoresizingMask = NO;
+}
+
+- (void)setTopic:(XYTopic *)topic
+{
+    _topic = topic;
 }
 
 @end

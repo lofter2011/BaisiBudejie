@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class XYTopic;
+
 @interface XYTopicPictureView : UIView
+
+/** 帖子模型 */
+@property (nonatomic, strong) XYTopic *topic;
 
 @end

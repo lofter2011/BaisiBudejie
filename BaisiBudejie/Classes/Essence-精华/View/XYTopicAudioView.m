@@ -7,12 +7,18 @@
 //
 
 #import "XYTopicAudioView.h"
+#import "XYTopic.h"
 
 @implementation XYTopicAudioView
 
 - (void)awakeFromNib
 {
     self.autoresizingMask = NO;
+}
+
+- (void)setTopic:(XYTopic *)topic
+{
+    _topic = topic;
 }
 
 @end

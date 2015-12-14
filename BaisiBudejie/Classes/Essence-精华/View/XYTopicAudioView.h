@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class XYTopic;
+
 @interface XYTopicAudioView : UIView
+
+/** 帖子模型 */
+@property (nonatomic, strong) XYTopic *topic;
 
 @end
